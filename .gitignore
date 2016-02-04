@@ -37,3 +37,6 @@ node_modules
 
 #bower
 bower_components
+
+#production code
+build

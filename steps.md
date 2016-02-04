@@ -16,4 +16,15 @@ run npm install
 ///npm install foobar --save --save-exact(heroku)
 
 npm install --save --save-exact foreman
+npm install --save-dev --save-exact karma
+npm install --save-dev --save-exact chai
+npm install --save-dev --save-exact mocha
 
+npm install --save-dev --save-exact jasmine
+npm install --save-dev --save-exact sinon
+npm install --save-dev --save-exact supertest
+
+//bower install jquery  ???
+
+npm install --save-dev grunt
+npm install --save-dev grunt-contrib-uglify­
