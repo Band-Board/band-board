@@ -15,4 +15,5 @@ run npm install
 
 ///npm install foobar --save --save-exact(heroku)
 
+npm install --save --save-exact foreman
 
