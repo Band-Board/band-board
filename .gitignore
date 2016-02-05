@@ -40,3 +40,6 @@ bower_components
 
 #production code
 build
+
+
+public/components/*
