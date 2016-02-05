@@ -4,12 +4,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
+var Band = require('./models/band');
+
+//Routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var bandsRouter = require('./routes/bands');
 
 var app = express();
+
+//Connect Mongoose
+mongoose.connect('mongodb://localhost/bandboard');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -60,3 +67,19 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+
+
+// THIS IS SAMPLE CODE TO ENSURE CONNECTIVITY TO DB.
+// console.log("creating band...");
+// var band = {
+//   name: 'Radiohead',
+//   img: 'http://cdn.pigeonsandplanes.com/wp-content/uploads/2015/08/radiohead1.jpg',
+//   bio: 'Radiohead was born cool.',
+//   dates: ["derp", "derp"],
+//   website: "http://cdn.pigeonsandplanes.com/wp-content/uploads/2015/08/radiohead1.jpg",
+//   created_by: "Spencer"
+// };
+// Band.create(band);
+// console.log("band created");
+
