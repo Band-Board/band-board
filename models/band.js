@@ -12,16 +12,16 @@ var BandSchema = new mongoose.Schema({
     img: {
         type: String,
         required: true
-    }
-    tourDates: {
+    },
+    dates: {
         type: Array,
         required: true
-    }
+    },
     website: {
         type: String,
         required: true
-    }
-    created by: {
+    },
+    created_by: {
         type: String,
         required: true
     }
