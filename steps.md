@@ -28,3 +28,18 @@ npm install --save-dev --save-exact supertest
 
 npm install --save-dev grunt
 npm install --save-dev grunt-contrib-uglify­
+"" concat
+" cssmin"
+
+pushed to my fork
+
+push heroku
+added papertrail
+
+added mongolab
+Adding mongolab-round-19517 to vast-caverns-74321... done
+Setting MONGOLAB_URI and restarting vast-caverns-74321... done, v6
+Welcome to MongoLab.  Your new subscription is being created and will be available shortly.  Please consult the MongoLab Add-on Admin UI to check on its progress.
+Use `heroku addons:docs mongolab` to view documentation.
+
+

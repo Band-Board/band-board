@@ -19,6 +19,8 @@ module.exports = function(grunt) {
       ]
     },
 
+    //asset Pipeline
+
     jsDir: 'public/javascripts/',
     jsDistDir: 'build/javascripts/',
     cssDir: 'public/stylesheets/',
