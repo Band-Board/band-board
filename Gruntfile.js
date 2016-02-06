@@ -13,6 +13,7 @@ module.exports = function(grunt) {
         '**/*.{js,json}',
         // Excludes
         "!**/node_modules/**",
+        "!**/bower_components/**",
         "!**/test/lib/**",
         "!**/*.min.js",
         "!1/04-linting/src/foo.js"
@@ -44,9 +45,22 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
+          './build/javascripts/jquery.min.js': './bower_components/jquery/dist/jquery.min.js',
+          './public/stylesheets/materialize.css' : './bower_components/Materialize/dist/js/materialize.min.js',
           '<%=jsDistDir%><%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
         }
       }
+    },
+    sass: {
+        options: {
+            sourceMap: false
+        },
+        dist: {
+            files: {
+                './public/stylesheets/materialize.css' : './bower_components/Materialize/sass/materialize.scss',
+                './public/stylesheets/style.css': './public/stylesheets/style.scss'
+            }
+        }
     },
     cssmin: {
       add_banner: {
@@ -54,7 +68,7 @@ module.exports = function(grunt) {
           banner: '/*! <%= pkg.name %> <%=grunt.template.today("dd-mm-yyyy") %> */\n'
         },
         files: {
-          '<%=cssDistDir%><%= pkg.name %>.min.css': ['<%= concat.css.dest %>']
+          './build/stylesheets/style.min.css': ['<%= concat.css.dest %>']
         }
       }
     },
@@ -88,14 +102,18 @@ module.exports = function(grunt) {
   //JSHINT
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
+  //Sass
+  grunt.loadNpmTasks('grunt-sass');
+
   //autoprefixer
   grunt.loadNpmTasks('grunt-autoprefixer');
 
   // register the nodemon task when we run grunt
-  grunt.registerTask('default', ['nodemon', 'jshint']);
+  grunt.registerTask('default', ['sass', 'nodemon', 'jshint']);
 
   //build
     grunt.registerTask('build', [
+    'sass',
     'concat',
     'uglify',
     'cssmin',
