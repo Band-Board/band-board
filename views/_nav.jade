@@ -1,16 +1,15 @@
-//- Dropdown structure
-ul.right.side-nav#mobile-nav
-  li
-    a(href="#!") Log-in
-  li.divider
-  li
-    a(href="#!") two
-
-nav.nav-wrapper
-  a.left.brand-logo(href="#") Band-Board
-  a.button-collapse(href="#" data-activates="mobile-nav")
-    i.material-icons menu
-  ul.right.hide-on-med-and-down
-    li
-      a(href="#") Log-In
-
+nav
+  .nav-wrapper
+    a.left.brand-logo(href="#") Band-Board
+    a.button-collapse.right(href="#" data-activates="mobile-nav")
+      i.material-icons menu
+    ul.right.hide-on-med-and-down
+      li
+        a(href="#") Log-In
+    //- Dropdown structure
+    ul.side-nav.right#mobile-nav
+      li
+        a(href="#!") Log-in
+      li.divider
+      li
+        a(href="#!") two
