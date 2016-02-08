@@ -1,2 +1,19 @@
 h1 Bands Index view
-p List bands here
+
+
+a(href='/bands/new') New band
+
+div
+  h1 Bands:
+    h3
+      ul
+        each band in bands
+          li= band.name
+            ul
+              li
+                a(href="/bands/#{band.id}") Band show
+              li= band.bio
+              li= band.img
+              li= band.website
+
+
