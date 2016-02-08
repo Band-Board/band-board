@@ -1,8 +1,12 @@
-@import 'test.scss';
 //@import '../bower_components/Materialize/sass/materialize.scss';
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 124px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: grey;
+}
+
+p {
+  margin: 300px;
 }
 
 a, p {
