@@ -1,25 +1,25 @@
-nav(class= nav ? 'transparent' : '')
+nav(class= nav ? 'transparent' : 'nav')
   .nav-wrapper
-    a.left.brand-logo(href="#")
+    a.left.brand-logo(href="/")
       img(src="../images/bandboardnoback.png" width= '200px')
     a.button-collapse.right(href="#" data-activates="mobile-nav")
       i.material-icons menu
     ul.right.hide-on-med-and-down
-       if (currentUser)
+      if (currentUser)
         li
           a(href="/logout") Logout
-       else
+      else
         li
           a(href="/login") Log-In
         li
           a(href="/signup") Sign-Up
     //- Dropdown structure
     ul.side-nav.right#mobile-nav
-
-      li
-        a(href="/logout") Logout
-      li
-        a(href="/login") Log-In
-      li
-        a(href="/signup") Sign-Up
-
+      if (currentUser)
+        li
+          a(href="/logout") Logout
+      else
+        li
+          a(href="/login") Log-In
+        li
+          a(href="/signup") Sign-Up

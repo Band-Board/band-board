@@ -1,3 +1,5 @@
+@import 'styleguide.scss';
+
 .error{
   color: black;
   font-size: 24px;
@@ -5,11 +7,6 @@
 
 h1 {
   margin: 0
-}
-
-a,
-p {
-  color: #ffffff;
 }
 
 .brand-logo img {
@@ -21,6 +18,7 @@ p {
   background: url('../images/band_back.png') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
+  color: $primaryLightText;
   .callToAction {
       width: 75%;
       text-align: center;
@@ -48,4 +46,8 @@ p {
 
 .transparent {
   color: black;
+}
+
+.nav{
+  background: #ADCAE6;
 }
