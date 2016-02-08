@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "grunt build",
+    "postinstall": "./node_modules/bower/bin/bower install && grunt build",
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
@@ -25,21 +25,22 @@
     "passport-spotify": "^0.3.0",
     "passport-twitter": "^1.0.4",
     "serve-favicon": "~2.3.0",
+    "grunt-cli": "0.1.11",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^3.0.3",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-cssmin": "^0.14.0",
-    "grunt-contrib-uglify": "^0.11.1",
-    "grunt-sass": "^1.1.0"
-  },
-  "devDependencies": {
-    "chai": "3.5.0",
     "grunt-concurrent": "^2.1.0",
     "grunt-contrib-connect": "^0.11.2",
     "grunt-contrib-jasmine": "^1.0.0",
     "grunt-contrib-jshint": "^0.12.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-nodemon": "^0.4.1",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-sass": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
     "jasmine": "2.4.1",
     "karma": "0.13.19",
     "load-grunt-tasks": "^3.4.0",
