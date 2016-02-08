@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "grunt",
+    "postinstall": "grunt build",
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
