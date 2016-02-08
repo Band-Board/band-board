@@ -139,9 +139,7 @@ module.exports = function(grunt) {
     'sass',
     'concat',
     'uglify',
-    'cssmin',
-    'watch',
-    'nodemon'
+    'cssmin'
   ]);
 
   // register the nodemon task and watch conncurrently
