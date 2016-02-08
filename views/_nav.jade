@@ -1,5 +1,20 @@
-extends ./layout.jade
+//- Dropdown structure
+ul.right.side-nav#mobile-nav
+  li
+    a(href="#!") Log-in
+  li.divider
+  li
+    a(href="#!") two
 
+nav.nav-wrapper
+  a.left.brand-logo(href="#") Band-Board
+  a.button-collapse(href="#" data-activates="mobile-nav")
+    i.material-icons menu
+  ul.right.hide-on-med-and-down
+    li
+      a(href="#") Log-In
+
+<<<<<<< cf8c5a3245ba99ac28463917286e5300fc3df15e
 block nav
 
   .nav-wrapper
@@ -9,3 +24,5 @@ block nav
     -else
     a (href='/login') Login
     a (href='/signup') Signup
+=======
+>>>>>>> Working on styling landing page

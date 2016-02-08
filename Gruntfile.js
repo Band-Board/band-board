@@ -106,7 +106,7 @@ module.exports = function(grunt) {
     },
 
     concurrent: {
-      tasks: ['sass', 'cssmin', 'jshint', 'nodemon', 'watch'],
+      tasks: ['sass', 'cssmin', 'nodemon', 'watch'],
       options: {
         logConcurrentOutput: true
       }
@@ -148,7 +148,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', '', function() {
     var taskList = [
       'concurrent',
-      'jshint',
       'sass',
       'cssmin',
       'concat',
