@@ -2,7 +2,7 @@
 
 body {
   font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: grey;
+
 }
 
 p {
@@ -11,4 +11,10 @@ p {
 
 a, p {
   color: #ffffff;
+}
+
+.jumbotron{
+  background: url('../images/bandboard_back.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 75vh;
 }
