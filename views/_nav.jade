@@ -1,5 +1,15 @@
-extends ./layout.jade
-
-block nav
+nav
   .nav-wrapper
-    a.brand-logo Logo
+    a.left.brand-logo(href="#") Band-Board
+    a.button-collapse.right(href="#" data-activates="mobile-nav")
+      i.material-icons menu
+    ul.right.hide-on-med-and-down
+      li
+        a(href="#") Log-In
+    //- Dropdown structure
+    ul.side-nav.right#mobile-nav
+      li
+        a(href="#!") Log-in
+      li.divider
+      li
+        a(href="#!") two
