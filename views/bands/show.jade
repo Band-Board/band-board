@@ -8,6 +8,12 @@ ul
   li= band.img
   li= band.website
 
+block content
+    form(name="deleteBand", method="POST", action="/bands/#{band.id}?_method=DELETE")
+        div.actions
+            input(type="submit", value="Delete Band")
+
+
 a(href='/bands/#{band.id}/edit') EDIT THIS BAND
 br
 a(href='/bands') Back to Bands
