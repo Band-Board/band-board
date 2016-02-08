@@ -1,6 +1,3 @@
-if (typeof message !== 'undefined')
-  if (typeof message.error !== 'undefined' && message.error.length > 0)
+div(class='error')
+ p(class='error')= message.error
 
-h1= message
-h2= error.status
-pre= error.stack

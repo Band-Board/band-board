@@ -1,6 +1,7 @@
 extends ./layout.jade
 
 block content
+    include ./error.jade
     div
     h2 Login
     form(name="signUp", method="post", action='/login')
