@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Band = require('../models/band');
-var bandController = require('../controller/bands')
+
 
 //INDEX
 router.get('/', function(req, res, next) {
