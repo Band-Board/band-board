@@ -1,10 +1,8 @@
-body {
-  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
 h1 {
   margin: 0; }
 
-a, p {
+a,
+p {
   color: #ffffff; }
 
 .brand-logo img {
@@ -15,6 +13,21 @@ a, p {
   background: url("../images/band_back.png") no-repeat center center fixed;
   background-size: cover;
   height: 100vh; }
+  .jumbotron .callToAction {
+    width: 75%;
+    text-align: center;
+    margin-top: 10px; }
+    .jumbotron .callToAction .largeCopy {
+      font-size: 80px;
+      font-weight: bold;
+      line-height: 20%; }
+    .jumbotron .callToAction .smallerCopy {
+      font-size: 32px;
+      padding: 0 12.5%;
+      font-weight: light;
+      font-style: italic; }
+    .jumbotron .callToAction .btn-large {
+      margin: 0 10px; }
 
 .transparent {
   color: black; }
