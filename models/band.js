@@ -15,7 +15,7 @@ var BandSchema = new mongoose.Schema({
     },
     dates: {
         type: Array,
-        required: true
+        // required: true
     },
     website: {
         type: String,
@@ -23,7 +23,7 @@ var BandSchema = new mongoose.Schema({
     },
     created_by: {
         type: String,
-        required: true
+        // required: true
     }
 });
 
