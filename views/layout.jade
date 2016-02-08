@@ -6,9 +6,9 @@ head
   link(rel='stylesheet', href='./stylesheets/style.min.css')
   link(rel='stylesheet', href='./stylesheets/band-board.css')
 
-  body
-  include ./_nav.jade
-  block content
+  body.container-fluid
+    include ./_nav.jade
+    block content
 
   script(type='text/javascript', src='./javascripts/jquery.min.js')
   script(type='text/javascript', src='./javascripts/materialize.min.js')

@@ -1,20 +1,27 @@
-//@import '../bower_components/Materialize/sass/materialize.scss';
-
 body {
   font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
 
 }
 
-p {
-
+h1 {
+  margin: 0
 }
 
 a, p {
   color: #ffffff;
 }
 
+.brand-logo img{
+  margin: 10px
+}
+
 .jumbotron{
-  background: url('../images/bandboard_back.jpg') no-repeat center center fixed;
+  margin-top: -64px;
+  background: url('../images/band_back.png') no-repeat center center fixed;
   background-size: cover;
-  height: 75vh;
+  height: 100vh;
+}
+
+.transparent{
+  color: black;
 }
