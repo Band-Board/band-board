@@ -1,9 +1,6 @@
 body {
-  font: 124px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: grey; }
-
-p {
-  margin: 300px; }
 
 a, p {
   color: #ffffff; }
