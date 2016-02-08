@@ -13,6 +13,7 @@ module.exports = function(grunt) {
         '**/*.{js,json}',
         // Excludes
         "!**/node_modules/**",
+        "!**/bower_components/**",
         "!**/test/lib/**",
         "!**/*.min.js",
         "!1/04-linting/src/foo.js"
@@ -46,7 +47,20 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
+          './build/javascripts/jquery.min.js': './bower_components/jquery/dist/jquery.min.js',
+          './build/javascripts/materialize.min.js': './bower_components/Materialize/dist/js/materialize.min.js',
           '<%=jsDistDir%><%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
+        }
+      }
+    },
+    sass: {
+      options: {
+        sourceMap: false
+      },
+      dist: {
+        files: {
+          './public/stylesheets/materialize.css': './bower_components/Materialize/sass/materialize.scss',
+          './public/stylesheets/style.css': './public/stylesheets/style.scss'
         }
       }
     },
@@ -56,26 +70,47 @@ module.exports = function(grunt) {
           banner: '/*! <%= pkg.name %> <%=grunt.template.today("dd-mm-yyyy") %> */\n'
         },
         files: {
-          '<%=cssDistDir%><%= pkg.name %>.min.css': ['<%= concat.css.dest %>']
+          './build/stylesheets/style.min.css': ['<%= concat.css.dest %>']
         }
       }
     },
 
     watch: {
-    files: ['<%=jsDir%>*.js', '<%=cssDir%>*.css', 'app.js'],
-    tasks: ['concat', 'uglify', 'cssmin', 'jshint'],
-    options: {
-          livereload: true
+      scripts: {
+        files: 'public/javascripts/*.js',
+        tasks: ['jshint', 'uglify', 'concat'],
+        options: {
+          reload: true
         }
+      },
+      css: {
+        files: 'public/stylesheets/*.scss',
+        tasks: ['sass', 'concat', 'cssmin'],
+        options: {
+          reload: true
+        }
+      }
     },
+    // files: ['<%=jsDir%>*.js', '<%=cssDir%>*.css', 'app.js', './public/*'],
+    // tasks: ['concat', 'uglify', 'cssmin', 'jshint'],
+    // options: {
+    //       livereload: true
+    //     }
+    // },
 
     // configure nodemon
     nodemon: {
       dev: {
         script: './bin/www'
       }
-    }
+    },
 
+    concurrent: {
+      tasks: ['sass', 'cssmin', 'jshint', 'nodemon', 'watch'],
+      options: {
+        logConcurrentOutput: true
+      }
+    }
   });
 
   // load nodemon  https://scotch.io/tutorials/using-gruntjs-in-a-mean-stack-application
@@ -90,18 +125,37 @@ module.exports = function(grunt) {
   //JSHINT
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
+  //Sass
+  grunt.loadNpmTasks('grunt-sass');
+
   //autoprefixer
   grunt.loadNpmTasks('grunt-autoprefixer');
 
-  // register the nodemon task when we run grunt
-  grunt.registerTask('default', ['nodemon', 'jshint']);
+  //concurrent
+  grunt.loadNpmTasks('grunt-concurrent');
 
   //build
-    grunt.registerTask('build', [
+  grunt.registerTask('build', [
+    'sass',
     'concat',
     'uglify',
     'cssmin',
-    'watch'
+    'watch',
+    'nodemon'
   ]);
 
+  // register the nodemon task and watch conncurrently
+  grunt.registerTask('default', '', function() {
+    var taskList = [
+      'concurrent',
+      'jshint',
+      'sass',
+      'cssmin',
+      'concat',
+      'nodemon',
+      'watch'
+    ];
+    grunt.task.run(taskList);
+  });
 };
+

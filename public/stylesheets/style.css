@@ -1,7 +1,9 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 124px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: grey; }
 
-a {
-  color: #00B7FF;
-}
+p {
+  margin: 300px; }
+
+a, p {
+  color: #ffffff; }
