@@ -1,5 +1,11 @@
 extends ./layout.jade
 
 block nav
+
   .nav-wrapper
     a.brand-logo Logo
+    -if (currentUser)
+    a (href='/logout') Logout
+    -else
+    a (href='/login') Login
+    a (href='/signup') Signup
