@@ -5,14 +5,14 @@ nav(class= nav ? 'transparent' : '')
     a.button-collapse.right(href="#" data-activates="mobile-nav")
       i.material-icons menu
     ul.right.hide-on-med-and-down
-
-      li
-        a(href="/logout") Logout
-
-      li
-        a(href="/login") Log-In
-      li
-        a(href="/signup") Sign-Up
+       if (currentUser)
+        li
+          a(href="/logout") Logout
+       else
+        li
+          a(href="/login") Log-In
+        li
+          a(href="/signup") Sign-Up
     //- Dropdown structure
     ul.side-nav.right#mobile-nav
 
