@@ -77,7 +77,10 @@ router.put('/:id', function(req, res) {
 //DELETE
 router.delete('/:id', function(req, res) {
   console.log("delete band");
-
+  Band.findByIdAndRemove(req.params.id)
+  .then(function() {
+    res.redirect('/bands');
+  });
 });
 
 

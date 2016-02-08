@@ -1,4 +1,15 @@
 extends ./layout.jade
 
 block content
-    p This is the login page
+    div
+    h2 Login
+    form(name="signUp", method="post", action='/login')
+        div.input
+            span.label Email
+            input(type="text", name="email")
+        div.input
+            span.label Password
+            input(type="text", name="password")
+
+        div.actions
+            input(type="submit")
