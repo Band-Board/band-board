@@ -76,7 +76,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: 'public/javascripts/*.js',
-        tasks: ['jshint', 'uglify', 'concat'],
+        tasks: ['concat', 'uglify'],
         options: {
           reload: true
         }
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
     },
 
     concurrent: {
-      tasks: ['sass', 'cssmin', 'nodemon', 'watch'],
+      tasks: ['sass', 'concat', 'cssmin', 'nodemon', 'watch'],
       options: {
         logConcurrentOutput: true
       }
@@ -148,6 +148,7 @@ module.exports = function(grunt) {
       'concurrent',
       'sass',
       'cssmin',
+      'uglify',
       'concat',
       'nodemon',
       'watch'
