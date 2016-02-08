@@ -1,4 +1,22 @@
-h1 New band view
-p Create new band here
+block content
+    h1 New Band
+    form(name="bandForm", method="post", action='/bands')
+        div.input
+            span.label Band Name
+            input(type="text", name="name", value="#{band.name}")
+        div.input
+            span.label Bio
+            input(type="text", name="bio",
+            value="#{band.bio}")
+        div.input
+            span.label Img Url
+            input(type="text", name="img",
+            value="#{band.img}")
+        div.input
+            span.label Band Website
+            input(type="text", name="website",
+            value="#{band.website}")
+        div.actions
+            input(type="submit")
 
-include _form
+a(href='/bands') Back

@@ -52,13 +52,26 @@ router.post('/', function(req, res) {
 //EDIT
 router.get('/:id/edit', function(req, res) {
   console.log('edit band');
-  res.render("bands/edit");
+  Band.findById(req.params.id)
+  .then(function(band) {
+    res.render('bands/edit', { band: band });
+  });
 });
 
 //UPDATE
 router.put('/:id', function(req, res) {
   console.log("update band");
-
+  Band.findById(req.params.id)
+  .then(function(band) {
+    band.name = req.body.name;
+    band.bio = req.body.bio;
+    band.img = req.body.img;
+    band.website = req.body.website;
+    return band.save();
+  })
+  .then(function(saved) {
+    res.redirect('/bands');
+  });
 });
 
 //DELETE
