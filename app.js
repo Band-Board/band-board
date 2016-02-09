@@ -94,7 +94,7 @@ if (app.get('env') === 'development') {
   mongoose.connect('mongodb://localhost/bandboard');
 }
 else {
-  mongoose.connect(process.env.MONGOLAB_URI);
+  mongoose.connect(config.process.env.MONGOLAB_URI);
 }
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
