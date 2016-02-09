@@ -1,8 +1,27 @@
+.largeLogo{
+  width: 40%;
+  margin: 0 auto;
+  margin-top: -50px;
+}
 .loginBack {
-  padding-top: 30px;
+  display: fixed;
+  top: 0;
+  z-index: -1;
+  padding-top: 50px;
   background: url('../images/loginback.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
+}
+
+.login-container{
+  width: 90%;
+  height: 85vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  margin-top: 50px;
    /* label color */
    .input-field label {
      color: $primaryDarkText;
@@ -16,11 +35,14 @@
      border-bottom: 10px solid $primaryDarkText;
      box-shadow: 0 1px 0 0 $primaryDarkText;
    }
+   h4{
+    text-align: center;
+   }
 }
 
 .loginRemote{
   .socialLogin{
-    width: 375px;
-    margin: 20px auto;
+    width: 350px;
+    margin: 5px auto;
   }
 }
