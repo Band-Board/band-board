@@ -5,6 +5,10 @@
 h1 {
   margin: 0; }
 
+.border-dark {
+  border-bottom: 10px solid #212121;
+  box-shadow: 0 1px 0 0 #212121; }
+
 .brand-logo img {
   margin: 10px; }
 
@@ -13,6 +17,13 @@ h1 {
 
 .material-icons.md-dark {
   color: #212121; }
+
+.vert {
+  height: 500px;
+  border-right: 3px solid #3c3c3c; }
+
+.vr {
+  color: #3c3c3c; }
 
 .jumbotron {
   margin-top: -64px;
@@ -43,6 +54,21 @@ h1 {
   background: #ADCAE6; }
 
 .loginBack {
+  padding-top: 30px;
   background: url("../images/loginback.jpg") no-repeat center center fixed;
   background-size: cover;
-  height: 100vh; }
+  height: 100vh;
+  /* label color */
+  /* label focus color */
+  /* label underline focus color */ }
+  .loginBack .input-field label {
+    color: #212121; }
+  .loginBack .input-field input[type=text]:focus + label {
+    color: #212121; }
+  .loginBack .input-field input[type=text]:focus {
+    border-bottom: 10px solid #212121;
+    box-shadow: 0 1px 0 0 #212121; }
+
+.loginRemote .socialLogin {
+  width: 375px;
+  margin: 20px auto; }
