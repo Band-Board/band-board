@@ -1,6 +1,9 @@
+extends ../layout.jade
+
 block content
     h1 New Band
-    form(name="bandForm", method="post", action='/bands')
+    .row
+      form.col.s12(name="bandForm", method="post", action='/bands')
         include _form
 
 a(href='/bands') Back

@@ -5,10 +5,6 @@
 h1 {
   margin: 0; }
 
-a,
-p {
-  color: #ffffff; }
-
 .brand-logo img {
   margin: 10px; }
 
@@ -16,7 +12,8 @@ p {
   margin-top: -64px;
   background: url("../images/band_back.png") no-repeat center center fixed;
   background-size: cover;
-  height: 100vh; }
+  height: 100vh;
+  color: #FFFFFF; }
   .jumbotron .callToAction {
     width: 75%;
     text-align: center;
@@ -35,3 +32,13 @@ p {
 
 .transparent {
   color: black; }
+
+.nav {
+  background: #ADCAE6; }
+
+.loginBack {
+  background: url("../images/loginback.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh; }
+  .loginBack h2 {
+    margin-top: -1.78rem; }
