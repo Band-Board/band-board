@@ -1,10 +1,16 @@
 nav(class= nav ? 'transparent' : 'nav')
   .nav-wrapper
     a.left.brand-logo(href="/")
-      img(src="../images/bandboardnoback.png" width= '200px')
-    a.button-collapse.right(href="#" data-activates="mobile-nav")
-      i.material-icons menu
+      img(src="/images/bandboardnoback.png" width= '200px')
+
     ul.right.hide-on-med-and-down
+      li
+        form
+          .input-field
+            input.search(type='search', required)
+            label(for="search")
+              i.material-icons.md-light search
+            i.material-icons.md-light close
       if (currentUser)
         li
           a(href="/logout") Logout
@@ -13,8 +19,17 @@ nav(class= nav ? 'transparent' : 'nav')
           a(href="/login") Log-In
         li
           a(href="/signup") Sign-Up
+    a.button-collapse.right(href="#" data-activates="mobile-nav")
+      i.material-icons menu
     //- Dropdown structure
     ul.side-nav.right#mobile-nav
+      li
+        form
+          .input-field
+            input.search(type='search', required)
+            label(for="search")
+              i.material-icons.md-dark search
+            i.material-icons.md-dark close
       if (currentUser)
         li
           a(href="/logout") Logout

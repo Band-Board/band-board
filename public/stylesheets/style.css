@@ -8,6 +8,12 @@ h1 {
 .brand-logo img {
   margin: 10px; }
 
+.material-icons.md-light {
+  color: #FFFFFF; }
+
+.material-icons.md-dark {
+  color: #212121; }
+
 .jumbotron {
   margin-top: -64px;
   background: url("../images/band_back.png") no-repeat center center fixed;

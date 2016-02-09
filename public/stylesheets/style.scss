@@ -12,6 +12,12 @@ h1 {
 .brand-logo img {
   margin: 10px
 }
+.material-icons.md-light{
+  color: $primaryLightText;
+}
+.material-icons.md-dark{
+  color: $primaryDarkText;
+}
 
 .jumbotron {
   margin-top: -64px;

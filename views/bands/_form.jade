@@ -3,8 +3,7 @@
     input(id='name', type="text", name="name", value="#{band.name}")
 .input-field.col.s12
     label(for='bio') Bio
-    textarea.materialize-textarea(id="bio", name="bio",
-    value="#{band.bio}")
+    textarea.materialize-textarea(id="bio", name="bio")= band.bio
 .input-field.col.s6
     label(for='img') Img Url
     input(id="img" type="text", name="img",
