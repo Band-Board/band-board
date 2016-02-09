@@ -1,3 +1,5 @@
+extends ../layout.jade
+
 block content
     h1 Edit Band
     form(name="bandForm", method="post", action='/bands/#{band.id}?_method=PUT')

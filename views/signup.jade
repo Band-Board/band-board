@@ -1,19 +1,9 @@
 extends ./layout.jade
 
 block content
-  .row
-    include ./error.jade
-    div
-    h2 Sign-Up
-    form.col.s8(name="signUp", method="post", action='/signup')
-
-      div.input-field.col.s12
-        label(for='email') Email
-        input(id='email', class='validate' type="email", name="email")
-
-      div.input-field.col.s12
-        label(for='password') Password
-        input(id='password' type="password", name="password", class='validate')
-
-      button.btn.waves-effect.waves-light(type="submit" name='action') Submit
-        i.material-icons.right send
+  .loginBack
+    .row
+      include ./error.jade
+      h2 Sign-Up
+      form.col.s5(name="signUp", method="post", action='/signup')
+        include ./_loginform.jade
