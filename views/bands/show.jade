@@ -1,21 +1,22 @@
-extends ./layout.jade
-
-h1 Show band view
-p show a band here
-
-ul
-  li=band.name
-  li= band.id
-  li= band.bio
-  li= band.img
-  li= band.website
+extends ../layout.jade
 
 block content
-    form(name="deleteBand", method="POST", action="/bands/#{band.id}?_method=DELETE")
-        div.actions
-            input(type="submit", value="Delete Band")
+  h1 Show band view
+  p show a band here
+
+  ul
+    li=band.name
+    li= band.id
+    li= band.bio
+    li= band.img
+    li= band.website
 
 
-a(href='/bands/#{band.id}/edit') EDIT THIS BAND
-br
-a(href='/bands') Back to Bands
+  form(name="deleteBand", method="POST", action="/bands/#{band.id}?_method=DELETE")
+      div.actions
+          input(type="submit", value="Delete Band")
+
+
+  a(href='/bands/#{band.id}/edit') EDIT THIS BAND
+  br
+  a(href='/bands') Back to Bands
