@@ -5,9 +5,9 @@ nav(class= nav ? 'transparent' : 'nav')
 
     ul.right.hide-on-med-and-down
       li
-        form
+        form(name='bandsearch', method='get', action='/search')
           .input-field
-            input.search(type='search', required)
+            input.bandSearch.search(name='bandname', type='search' required)
             label(for="search")
               i.material-icons.md-light search
             i.material-icons.md-light close
@@ -24,9 +24,10 @@ nav(class= nav ? 'transparent' : 'nav')
     //- Dropdown structure
     ul.side-nav.right#mobile-nav
       li
-        form
+        form(name='bandsearch', method='get', action='/search/')
+
           .input-field
-            input.search(type='search', required)
+            input.bandSearch.search(name='bandname' type='search', required)
             label(for="search")
               i.material-icons.md-dark search
             i.material-icons.md-dark close

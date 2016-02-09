@@ -31,6 +31,17 @@ h1 {
 .vr{color: $dividersDark;
   }
 
+.card {
+  height: 400px;
+  padding: 5px;
+  font-size: 1rem;
+  .card-image img{
+    // min-width: 125px;
+
+    // max-width: 250px;
+    height: 250px;
+  }
+}
 .jumbotron {
   margin-top: -64px;
   background: url('../images/band_back.png') no-repeat center center fixed;
@@ -68,6 +79,10 @@ h1 {
 
 .nav{
   background: #ADCAE6;
+}
+
+.allSearchResults{
+
 }
 
 
