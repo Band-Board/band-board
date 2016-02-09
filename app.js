@@ -21,8 +21,8 @@ var bandsRouter = require('./routes/bands');
 var app = express();
 
 //Connect Mongoose
-// mongoose.connect('mongodb://heroku_g0vjbd84:9r4cq2vpcvosh4p4gs1ngb8n1p@ds055505.mongolab.com:55505/heroku_g0vjbd84');
-mongoose.connect('mongodb://localhost/bandboard');
+mongoose.connect('mongodb://heroku_g0vjbd84:9r4cq2vpcvosh4p4gs1ngb8n1p@ds055505.mongolab.com:55505/heroku_g0vjbd84');
+// mongoose.connect('mongodb://localhost/bandboard');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
