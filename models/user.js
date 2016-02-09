@@ -7,7 +7,8 @@ var User = new mongoose.Schema({
     email    : String,
     password : String
   },
-  bands : [Band.schema]
+  // bands : [Band.schema]
+  bands : [{ type: mongoose.Schema.ObjectId, ref: 'Band' }]
 });
 
 User.methods.encrypt = function(password) {
