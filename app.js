@@ -90,7 +90,7 @@ app.use(function(err, req, res, next) {
 //mongoose.connect('mongodb://localhost/bandboard');
 
 // Connect to database
-if (app.get('env') === 'development') {
+/*if (app.get('env') === 'development') {
   mongoose.connect('mongodb://localhost/bandboard');
 }
 else {
@@ -106,7 +106,9 @@ mongoose.connection.once('open', function() {
 });
 
 console.log('Running in %s mode', app.get('env'));
-
+*/
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/bandboard'
+mongoose.connect(mongoURI);
 
 module.exports = app;
 
