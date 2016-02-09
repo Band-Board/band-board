@@ -13,8 +13,6 @@ var flash = require('connect-flash');
 
 var cloudinary = require('cloudinary');
 
-//environment variables
-
 var Band = require('./models/band');
 
 //Routers
@@ -107,7 +105,7 @@ mongoose.connection.once('open', function() {
 
 console.log('Running in %s mode', app.get('env'));
 */
-var mongoURI = 'mongodb://heroku_g0vjbd84:9r4cq2vpcvosh4p4gs1ngb8n1p@ds055505.mongolab.com:55505/heroku_g0vjbd84';
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/bandboard';
 mongoose.connect(mongoURI);
 
 module.exports = app;
