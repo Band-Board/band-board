@@ -1,5 +1,26 @@
 .loginBack {
+  padding-top: 30px;
   background: url('../images/loginback.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
+   /* label color */
+   .input-field label {
+     color: $primaryDarkText;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: $primaryDarkText;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 10px solid $primaryDarkText;
+     box-shadow: 0 1px 0 0 $primaryDarkText;
+   }
+}
+
+.loginRemote{
+  .socialLogin{
+    width: 375px;
+    margin: 20px auto;
+  }
 }
