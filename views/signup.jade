@@ -2,8 +2,21 @@ extends ./layout.jade
 
 block content
   .loginBack
-    .row
+    .container-fluid
       include ./error.jade
-      h2 Sign-Up
-      form.col.s5(name="signUp", method="post", action='/signup')
-        include ./_loginform.jade
+        .row
+          .col.s5.vert.offset-s1
+            .row
+              .localLogin.col.s12
+                h2 Sign-Up
+                form.col.s12(name="signUp", method="post", action='/signup')
+                  include ./_loginform.jade
+          .loginRemote.col.offset-s1.s5
+            h2 Via Social Media
+            ul
+              li
+                a.socialLogin.waves-effect.waves-light.btn-large(href='#') Sign Up Via Facebook
+              li
+                a.socialLogin.waves-effect.waves-light.btn-large(href='#') Sign Up Via Twitter
+              li
+                a.socialLogin.waves-effect.waves-light.btn-large(href='#') Sign Up Via Spotify
