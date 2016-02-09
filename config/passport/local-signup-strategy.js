@@ -7,6 +7,7 @@ var strategy = new LocalStrategy({
     passReqToCallback : true
   },
   function(req, email, password, callback) {
+    console.log('local signup strategy...');
     // Find a user with this e-mail
     User.findOne({ 'local.email' :  email }, function(err, user) {
       if (err) return callback(err);
@@ -21,6 +22,8 @@ var strategy = new LocalStrategy({
         newUser.local.password = newUser.encrypt(password);
 
         newUser.save(function(err) {
+          console.log("saving user...")
+          console.log('calling callback with:', err, newUser);
           return callback(err, newUser);
         });
       }

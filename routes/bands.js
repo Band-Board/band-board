@@ -19,7 +19,8 @@ router.get('/new', function(req, res) {
     name: '',
     bio: '',
     img: '',
-    website: ''
+    website: '',
+    created_by: ''
   };
   res.render('bands/new', { band: band } );
 });
@@ -40,7 +41,8 @@ router.post('/', function(req, res) {
       name: req.body.name,
       bio: req.body.bio,
       img: req.body.img,
-      website: req.body.website
+      website: req.body.website,
+      creator: req.user.local.email
     });
   console.log(band);
     band.save()

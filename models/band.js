@@ -21,9 +21,9 @@ var BandSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    created_by: {
+    creator: {
         type: String,
-        // required: true
+        required: true
     }
 });
 
