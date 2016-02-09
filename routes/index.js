@@ -7,6 +7,13 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'BandBoard', nav: true });
 });
 
+router.get('/search', function(req, res, next){
+  var band = req.query['bandname'];
+
+  res.render('search.jade', {band: band});
+
+});
+
 // GET /signup
 router.get('/signup', function(req, res, next) {
   res.render('signup.jade', { message: req.flash() });
@@ -45,6 +52,7 @@ router.get('/logout', function(req, res, next) {
   req.logout();
   res.redirect('/');
 });
+
 
 
 
