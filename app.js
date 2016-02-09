@@ -14,7 +14,7 @@ var flash = require('connect-flash');
 var cloudinary = require('cloudinary');
 
 //environment variables
-var config = require('./config/config.js');
+
 var Band = require('./models/band');
 
 //Routers
