@@ -82,7 +82,12 @@ h1 {
 }
 
 .allSearchResults{
-
+  img.activator{
+    z-index: 0;
+  }
+  .card-content{
+    z-index: 1;
+  }
 }
 
 

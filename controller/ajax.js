@@ -1,4 +1,5 @@
 var async = require('async');
+var express = require('express');
 var request = require('request-promise');
 
 var Ajax = {
@@ -16,7 +17,7 @@ var Ajax = {
       }, function(error, response, body) {
         if (!error && response.statusCode === 200) {
           artists = body.artists.items;
-          console.log('did a thing');
+          console.log('retrieved spotify artist');
           callback(artists);
         } else {
           console.log('spotify error');
@@ -25,42 +26,50 @@ var Ajax = {
       });
     }
 
-    var counter = 0;
+    var counter = 1;
 
     function searchBandsInTown(artist) {
-      console.log('hello from searchBandsInTown');
-      var url = 'https://api.bandsintown.com/artists/' + artist.name + '.json?api_version=2.0&app_id=test';
+      var url = 'https://api.bandsintown.com/artists/' +
+      artist.name +
+      '.json?api_version=2.0&app_id=test';
+
       request({
         url: url,
         json: true
       }).then(function(results) {
         console.log('success');
-        console.log(results);
         console.log(counter);
         arrayArtist.push(results);
-        counter++;
+
         if (counter >= 20) {
-          res.render('search.jade', {
-            band: arrayArtist,
-            a: 'if'
+          console.log('length ' + arrayArtist.length);
+          console.log('rendering from then'); 
+          console.log(arrayArtist[0]);
+          args[1].render('search.jade', {
+            band: arrayArtist
           });
+        } else {
+          counter++;
         }
       }).catch(function() {
         // console.log(err);
         console.log('handled the error');
-        counter++;
+        console.log(counter);
         if (counter >= 20) {
+          console.log('length ' + arrayArtist.length);
+          console.log('rendering from catch');
+          console.log(arrayArtist[0]);
           args[1].render('search.jade', {
-            band: arrayArtist,
-            a: 'if'
+            band: arrayArtist
           });
+        } else {
+          counter++;
         }
       });
     }
 
     searchSpotify(args[0], function(artists) {
-      console.log('hello from init');
-      console.log(artists.length);
+      console.log('hello from the Loop!');
       async.each(artists, searchBandsInTown);
     });
   }

@@ -21,6 +21,7 @@ router.get('/search', function(req, res, next) {
     .then(function(band) {
       console.log(band);
       if (band.length > 0) {
+        console.log("didn't render locally");
         res.render('search.jade', {
           band: 'band',
           a: 'if'

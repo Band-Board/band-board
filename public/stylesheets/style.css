@@ -60,6 +60,12 @@ h1 {
 .nav {
   background: #ADCAE6; }
 
+.allSearchResults img.activator {
+  z-index: 0; }
+
+.allSearchResults .card-content {
+  z-index: 1; }
+
 .largeLogo {
   width: 40%;
   margin: 0 auto;
