@@ -42,11 +42,13 @@ router.post('/', function(req, res) {
       bio: req.body.bio,
       img: req.body.img,
       website: req.body.website,
-      creator: req.user.local.email
+      creator: req.user.id
     });
   console.log(band);
     band.save()
     .then(function(saved) {
+      req.user.bands.push(saved.id);
+      req.user.save()
       res.redirect('/bands');
     });
 });
