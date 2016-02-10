@@ -20,7 +20,9 @@ function searchSpotify(req) {
 function searchBandsInTown(req) {
   console.log(req.artists.items);
   req.artists.items.forEach(function(artist) {
+
     $.getJSON('http://api.bandsintown.com/artists/' + artist.name + '.json?callback=?', {
+
       app_id: 'test',
       api_version: '2.0'
     }, function(x) {

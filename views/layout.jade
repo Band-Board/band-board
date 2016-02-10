@@ -7,7 +7,8 @@ head
   link(rel='stylesheet', href='/stylesheets/style.min.css')
 
   body
-  include ./_nav.jade
+  unless ignoreNav
+    include ./_nav.jade
 
   block content
 

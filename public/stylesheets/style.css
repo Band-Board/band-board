@@ -19,7 +19,7 @@ h1 {
   color: #212121; }
 
 .vert {
-  height: 500px;
+  height: 300px;
   border-right: 3px solid #3c3c3c; }
 
 .vr {
@@ -60,22 +60,42 @@ h1 {
 .nav {
   background: #ADCAE6; }
 
+.largeLogo {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: -50px; }
+
 .loginBack {
-  padding-top: 30px;
+  display: fixed;
+  top: 0;
+  z-index: -1;
+  padding-top: 50px;
   background: url("../images/loginback.jpg") no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
+  height: 100vh; }
+
+.login-container {
+  width: 90%;
+  height: 85vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  margin-top: 50px;
   /* label color */
   /* label focus color */
   /* label underline focus color */ }
-  .loginBack .input-field label {
+  .login-container .input-field label {
     color: #212121; }
-  .loginBack .input-field input[type=text]:focus + label {
+  .login-container .input-field input[type=text]:focus + label {
     color: #212121; }
-  .loginBack .input-field input[type=text]:focus {
+  .login-container .input-field input[type=text]:focus {
     border-bottom: 10px solid #212121;
     box-shadow: 0 1px 0 0 #212121; }
+  .login-container h4 {
+    text-align: center; }
 
 .loginRemote .socialLogin {
-  width: 375px;
-  margin: 20px auto; }
+  width: 350px;
+  margin: 5px auto; }
