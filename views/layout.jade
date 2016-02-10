@@ -5,7 +5,7 @@ head
   //- Import Google Icon Font
   link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
   link(rel='stylesheet', href='/stylesheets/style.min.css')
-
+  link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.0/fullcalendar.min.css')
   body
   unless ignoreNav
     include ./_nav.jade
@@ -13,5 +13,14 @@ head
   block content
 
   script(type='text/javascript', src='/javascripts/jquery.min.js')
+  script(type='text/javascript', src='/javascripts/moment.min.js')
+  script(type='text/javascript', src='/javascripts/fullcalendar.min.js')
   script(type='text/javascript', src='/javascripts/materialize.min.js')
   script(type='text/javascript', src='/javascripts/band-board.min.js')
+  script.
+      $(document).ready(function() {
+          $('#calendar').fullCalendar({
+          })
+      });
+
+
