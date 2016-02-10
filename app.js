@@ -11,10 +11,14 @@ var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
 
+//images
 var cloudinary = require('cloudinary');
+var fs = require ('fs');
+var http = require('http');
+var path = require('path');
 
-var Band = require('./models/band');
-
+var config = require('./config/config.js').get(process.env.NODE_ENV);
+var CLOUDINARY_URL = config.CLOUDINARY_URL;
 //Routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -52,6 +56,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/bands', bandsRouter);
 
+
+//image upload
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -83,28 +92,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-//Connect Mongoose
-//mongoose.connect(PROD_MONGODB);
-//mongoose.connect('mongodb://localhost/bandboard');
-
-// Connect to database
-/*if (app.get('env') === 'development') {
-  mongoose.connect('mongodb://localhost/bandboard');
-}
-else {
-  mongoose.connect(config.process.env.MONGOLAB_URI);
-}
-mongoose.connection.on('error', function(err) {
-  console.error('MongoDB connection error: ' + err);
-  process.exit(-1);
-  }
-);
-mongoose.connection.once('open', function() {
-  console.log("Mongoose has connected to MongoDB!");
-});
-
-console.log('Running in %s mode', app.get('env'));
-*/
 var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/bandboard';
 mongoose.connect(mongoURI);
 
