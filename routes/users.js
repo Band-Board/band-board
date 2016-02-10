@@ -17,7 +17,7 @@ router.get('/bands', function(req, res, next) {
 User.findById(currentUser._id).populate("bands")
     .then(function(user) {
       console.log(user)
-      res.render('users/bands');
+      res.render('users/bands', {bands: user.bands} );
       });
 });
 
