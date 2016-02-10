@@ -11,6 +11,8 @@ var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
 
+var cloudinary = require('cloudinary');
+
 var Band = require('./models/band');
 
 //Routers
@@ -19,10 +21,6 @@ var usersRouter = require('./routes/users');
 var bandsRouter = require('./routes/bands');
 
 var app = express();
-
-//Connect Mongoose
-// mongoose.connect('mongodb://heroku_g0vjbd84:9r4cq2vpcvosh4p4gs1ngb8n1p@ds055505.mongolab.com:55505/heroku_g0vjbd84');
-mongoose.connect('mongodb://localhost/bandboard');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -85,6 +83,30 @@ app.use(function(err, req, res, next) {
   });
 });
 
+//Connect Mongoose
+//mongoose.connect(PROD_MONGODB);
+//mongoose.connect('mongodb://localhost/bandboard');
+
+// Connect to database
+/*if (app.get('env') === 'development') {
+  mongoose.connect('mongodb://localhost/bandboard');
+}
+else {
+  mongoose.connect(config.process.env.MONGOLAB_URI);
+}
+mongoose.connection.on('error', function(err) {
+  console.error('MongoDB connection error: ' + err);
+  process.exit(-1);
+  }
+);
+mongoose.connection.once('open', function() {
+  console.log("Mongoose has connected to MongoDB!");
+});
+
+console.log('Running in %s mode', app.get('env'));
+*/
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/bandboard';
+mongoose.connect(mongoURI);
 
 module.exports = app;
 

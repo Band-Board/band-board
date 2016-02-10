@@ -9,6 +9,11 @@ h1 {
   margin: 0
 }
 
+.border-dark{
+  border-bottom: 10px solid $primaryDarkText;
+  box-shadow: 0 1px 0 0 $primaryDarkText;
+}
+
 .brand-logo img {
   margin: 10px
 }
@@ -19,6 +24,24 @@ h1 {
   color: $primaryDarkText;
 }
 
+.vert{
+  height: 300px;
+  border-right: 3px solid $dividersDark;
+}
+.vr{color: $dividersDark;
+  }
+
+.card {
+  height: 400px;
+  padding: 5px;
+  font-size: 1rem;
+  .card-image img{
+    // min-width: 125px;
+
+    // max-width: 250px;
+    height: 250px;
+  }
+}
 .jumbotron {
   margin-top: -64px;
   background: url('../images/band_back.png') no-repeat center center fixed;
@@ -56,6 +79,10 @@ h1 {
 
 .nav{
   background: #ADCAE6;
+}
+
+.allSearchResults{
+
 }
 
 

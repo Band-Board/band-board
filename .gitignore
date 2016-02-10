@@ -42,3 +42,6 @@ bower_components
 build/javascripts/*
 build/stylesheets/*
 
+scratch.txt
+
+config/config.js
