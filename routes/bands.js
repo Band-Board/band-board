@@ -47,15 +47,17 @@ router.get('/:id', function(req, res) {
 router.post('/', function(req, res) {
   console.log('create band');
   var band = new Band({
-    name: req.body.name,
-    bio: req.body.bio,
-    img: req.body.img,
-    website: req.body.website,
-    creator: req.user.local.email
-  });
+      name: req.body.name,
+      bio: req.body.bio,
+      img: req.body.img,
+      website: req.body.website,
+      creator: req.user.id
+    });
   console.log(band);
   band.save()
     .then(function(saved) {
+      req.user.bands.push(saved.id);
+      req.user.save()
       res.redirect('/bands');
     });
 });

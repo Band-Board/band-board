@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
   $('.button-collapse').sideNav({
     menuWidth: 300, // Default is 240
@@ -11,6 +12,7 @@ $(document).ready(function() {
     searchSpotify(band);
   }
 });
+
 
 function searchSpotify(req) {
   $.getJSON('https://api.spotify.com/v1/search?q=' + req + '&type=artist', {})
@@ -38,3 +40,10 @@ function searchBandsInTown(req) {
     });
   });
 }
+
+//   function searchDatabase(band) {
+//   var band = Band.findOne( {"name" : band});
+//   console.log(band);
+//   return band;
+// }
+

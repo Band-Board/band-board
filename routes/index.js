@@ -1,17 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var User = require('../models/user');
+var Band = require('../models/band');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'BandBoard', nav: true });
+      res.render('index', { title: 'BandBoard', nav: true });
 });
 
 router.get('/search', function(req, res, next){
   var band = req.query['bandname'];
 
-  res.render('search.jade', {band: band});
-
+  console.log(band);
+  Band.find({"name" : band})
+    .then(function(band) {
+      console.log(band)
+      res.render('search.jade', {band: band});
+      });
 });
 
 // GET /signup
