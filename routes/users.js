@@ -14,17 +14,25 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/bands', function(req, res, next) {
+User.findById(currentUser._id).populate("bands")
+    .then(function(user) {
+      console.log(user)
+      res.render('users/bands');
+      });
+});
+
+module.exports = router;
+
+
+//WHO KNOWS?!
   //isnt finding user now?!
   // var user = User.findById(currentUser._id).populate("bands")
   // console.log(user.id)
    //WONT FOLLOW PROMISE ANYMORE. .THEN NEVER HAPPENS
     // .then(function(user) {
-      // console.log('currentUser has bands:', user.bands);
-      res.render('users/bands');
+    //   console.log('currentUser has bands:', user.bands);
+    //   res.render('users/bands');
     // });
-});
-
-module.exports = router;
 
 //THIS DOES WORK? MAYBE?
     // var user = User.findById(currentUser._id).populate("bands")
@@ -33,11 +41,8 @@ module.exports = router;
     //   res.render('index', { title: 'BandBoard', nav: true });
     // });
 
-
 //attempt to find current userr
 // User.findOne({ "local.email": currentUser.local.email } )
-
-
 
 //THIS DOESNT WORK
   //   User.findById(req.user.id).populate('bands')
