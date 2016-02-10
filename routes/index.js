@@ -9,13 +9,9 @@ router.get('/', function(req, res, next) {
 
 router.get('/search', function(req, res, next){
   var band = req.query['bandname'];
-<<<<<<< HEAD
 
   res.render('search.jade', {band: band});
 
-=======
-  res.render('search.jade', {band: band});
->>>>>>> 0007e12cf8250fd10637cb8c426a6511784e8bf1
 });
 
 // GET /signup

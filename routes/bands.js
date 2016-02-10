@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var Band = require('../models/band');
-<<<<<<< HEAD
-var cloudinary = require('cloudinary');
-var config = require('../config/config.js').get(process.env.NODE_ENV);
-var CLOUDINARY_URL = config.CLOUDINARY_URL;
-=======
->>>>>>> 0007e12cf8250fd10637cb8c426a6511784e8bf1
+//var cloudinary = require('cloudinary');
+//var config = require('../config/config.js').get(process.env.NODE_ENV);
+//var CLOUDINARY_URL = config.CLOUDINARY_URL;
+
 
 //INDEX
 router.get('/', function(req, res, next) {
