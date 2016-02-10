@@ -11,7 +11,11 @@ nav(class= nav ? 'transparent' : 'nav')
             label(for="search")
               i.material-icons.md-light search
             i.material-icons.md-light close
+      li
+        a(href="/bands") Band Database
       if (currentUser)
+        li
+          a(href="/user") Profile
         li
           a(href="/logout") Logout
       else

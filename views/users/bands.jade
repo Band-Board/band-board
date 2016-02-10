@@ -1,7 +1,6 @@
 include ../layout.jade
 
-h1 hi from user views
-h1 show user bands here
+h1 User Bands:
 
 ul
   each band in bands
@@ -11,3 +10,9 @@ ul
         li= band.img
         li= band.website
         li= band.creator
+    form(name="deleteBand", method="POST", action="/bands/#{band.id}?_method=DELETE")
+        div.actions
+            input(type="submit", value="Delete Band")
+    a(href='/bands/#{band.id}/edit') EDIT THIS BAND
+    br
+    br
