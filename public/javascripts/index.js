@@ -1,20 +1,6 @@
-$(document).ready(function() {
-
-    $('.button-collapse').sideNav({
-        menuWidth: 300, // Default is 240
-        edge: 'right', // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-
-    });
-    if ($('.userProfile').length === 1 || $('.bandProfile').length === 1) {
-        searchEventsInTown();
-    }
-});
-
 function searchEventsInTown() {
     // event.preventDefault();
     console.log('hello from events in town');
-    var bandevent;
     var $artist = $('#bandName').text();
     $('#info').html('<p>getting events with ' + $artist + '</p>');
     //var $term = $('search-keyword').val();
@@ -33,6 +19,7 @@ function searchEventsInTown() {
         success: function(data) {
             console.log('hello from success');
             var JSON = [];
+            var bandEvents=data;
             bandEvents.forEach(function(x) {
                 JSON.push ({
                     "title": x.title,
@@ -47,5 +34,18 @@ function searchEventsInTown() {
         }
     });
 
-    console.log('bandEvent at end of Function ' + bandEvents);
 }
+
+$(document).ready(function() {
+
+    $('.button-collapse').sideNav({
+        menuWidth: 300, // Default is 240
+        edge: 'right', // Choose the horizontal origin
+        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+
+    });
+    if ($('.userProfile').length === 1 || $('.bandProfile').length === 1) {
+        searchEventsInTown();
+    }
+});
+
