@@ -3,9 +3,9 @@ include ../layout.jade
 block content
   .bandProfile.row.z-depth-1
     .bandInfo.col.s6.row
-      .imageBand.col.s6
+      .imageBand
         img(src=band.img)
-      .col.s6.bandNames
+      .bandNames
         h3#bandName= band.name
         h5 @Twitter
     .bandInfo.col.s6
