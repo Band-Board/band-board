@@ -14,12 +14,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/search', function(req, res, next) {
-  var bandSearch = req.query['bandname'].toLowerCase();
+  var bandSearch = req.query['bandname'];
   console.log(bandSearch);
   Band.find({
-      "name": bandSearch.toLowerCase()
+      "name": new RegExp('^'+bandSearch+'$', "i")
     }).then(function(band) {
-
+      console.log(band);
       if (band.length > 0) {
         band.forEach(function(x){
            x.image_url= x.img,
