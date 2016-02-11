@@ -13,23 +13,13 @@ router.get('/', function(req, res, next) {
   });
 });
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> refs/remotes/origin/master
 router.get('/search', function(req, res, next) {
   var bandSearch = req.query['bandname'];
   console.log(bandSearch);
   Band.find({
-<<<<<<< HEAD
-      "name": bandSearch
-    })
-    .then(function(band) {
-=======
       "name": new RegExp('^'+bandSearch+'$', "i")
     }).then(function(band) {
->>>>>>> refs/remotes/origin/master
       console.log(band);
       if (band.length > 0) {
         band.forEach(function(x){
