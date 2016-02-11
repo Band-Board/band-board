@@ -14,9 +14,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/search', function(req, res, next) {
-  var bandSearch = req.query['bandname'];
+  var bandSearch = req.query['bandname'].toLowerCase();
+  console.log(bandSearch);
   Band.find({
-      "name": bandSearch
+      "name": bandSearch.toLowerCase()
     }).then(function(band) {
 
       if (band.length > 0) {
