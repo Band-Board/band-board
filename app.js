@@ -12,13 +12,13 @@ var session = require('express-session');
 var flash = require('connect-flash');
 
 //images
-var cloudinary = require('cloudinary');
+//var cloudinary = require('cloudinary');
 var fs = require ('fs');
 var http = require('http');
 var path = require('path');
 
-var config = require('./config/config.js').get(process.env.NODE_ENV);
-var CLOUDINARY_URL = config.CLOUDINARY_URL;
+//var config = require('./config/config.js').get(process.env.NODE_ENV);
+//var CLOUDINARY_URL = config.CLOUDINARY_URL;
 //Routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

@@ -13,19 +13,12 @@ router.get('/', function(req, res, next) {
   });
 });
 
-<<<<<<< HEAD
-router.get('/search', function(req, res, next){
-  var band = req.query['bandname'];
 
-  console.log(band);
-  Band.find({"name" : band})
-=======
 router.get('/search', function(req, res, next) {
   var bandSearch = req.query['bandname'];
   Band.find({
       "name": bandSearch
     })
->>>>>>> refs/remotes/origin/master
     .then(function(band) {
       console.log(band);
       if (band.length > 0) {
