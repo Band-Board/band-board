@@ -17,8 +17,6 @@ var fs = require ('fs');
 var http = require('http');
 var path = require('path');
 
-//var config = require('./config/config.js').get(process.env.NODE_ENV);
-//var CLOUDINARY_URL = config.CLOUDINARY_URL;
 //Routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

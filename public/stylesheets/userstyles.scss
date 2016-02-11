@@ -1,0 +1,24 @@
+.userProfile{
+  height: 100vh;
+  width: 100vw;
+  .imageBand{
+    height: 75%;
+    img{
+      height: 100%;
+    }
+  }
+  .aside{
+    background: $darkPrimary;
+    height: 100%;
+  }
+  .profileImg{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 100px;
+    img{
+      border-radius: 100px;
+    }
+  }
+}

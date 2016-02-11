@@ -16,16 +16,25 @@ router.get('/', function(req, res, next) {
 
 router.get('/search', function(req, res, next) {
   var bandSearch = req.query['bandname'];
+  console.log(bandSearch);
   Band.find({
+<<<<<<< HEAD
       "name": bandSearch
     })
     .then(function(band) {
+=======
+      "name": new RegExp('^'+bandSearch+'$', "i")
+    }).then(function(band) {
+>>>>>>> 14c93d36f7fb77330081acf21c3ea79b1ac7383b
       console.log(band);
       if (band.length > 0) {
-        console.log("didn't render locally");
+        band.forEach(function(x){
+           x.image_url= x.img,
+           x.upcoming_event_count = x.dates.length;
+        });
+        console.log('rendering from local');
         res.render('search.jade', {
-          band: 'band',
-          a: 'if'
+          band: band
         });
       } else {
         console.log(Ajax.working);
@@ -47,7 +56,7 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
   console.log('you found the /signup post route');
   var signUpStrategy = passport.authenticate('local-signup', {
-    successRedirect: '/signup',
+    successRedirect: 'index',
     failureRedirect: '/signup',
     failureFlash: true
   });

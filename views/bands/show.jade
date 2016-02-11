@@ -1,17 +1,20 @@
-extends ../layout.jade
+include ../layout.jade
 
 block content
+  .bandProfile.row.z-depth-1
+    .bandInfo.col.s6.row
+      .imageBand
+        img(src=band.img)
+      .bandNames
+        h3(id='bandName')= band.name
+        h5 @Twitter
+    .bandInfo.col.s6
+      p= band.bio
+    .bandLinks
+      br
+      a(href="https://#{band.website}") Bands Website
+      br
+      a(href='/bands') Back to Bands
+  .calendar.row
+    #calendar.s12
 
-  ul
-    li
-      h1= band.name
-    li= band.bio
-    li
-      img(src=band.img)
-    li
-      a(href=band.website) Band website
-
-
-
-  br
-  a(href='/bands') Back to Bands

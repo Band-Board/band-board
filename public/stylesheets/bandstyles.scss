@@ -1,0 +1,41 @@
+.bandProfile{
+  position: relative;
+  height: 50vh;
+  background: $darkPrimary;
+  .imageBand{
+    height: 100%;
+    width: 50%;
+    float: left;
+    img{
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+  .bandInfo{
+    background: $darkPrimary;
+    height: 80%;
+  }
+  .bandLinks{
+    height: 19%;
+  }
+  .profileImg{
+    height: 150px;
+    width: 150px;
+    margin-top: 5px;
+    img{
+      height: 150px;
+      width: 150px;
+      border-radius: 100%;
+    }
+  }
+}
+
+.calendar.row{
+  margin-top: 50px;
+}
+
+.bandNames{
+  width: 50%;
+  float: left;
+  padding-left: 25px;
+}
