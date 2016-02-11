@@ -16,6 +16,7 @@ function error (event) {
 
 function searchEventsInTown() {
   // event.preventDefault();
+  var bandevent;
   var $artist = $('#bandName').text();
   $('#info').html('<p>getting events with ' + $artist + '</p>');
   //var $term = $('search-keyword').val();
@@ -34,10 +35,10 @@ function searchEventsInTown() {
     success : function(data) {
     // displayResults(data);
     console.log(data);
-    return data;
+    bandevent = data;
   }
 });
-
+  return bandevent
 }
 
 // function displayResults(data) {

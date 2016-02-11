@@ -17,30 +17,6 @@ block content
 
 script.
       $(document).ready(function() {
-        function searchEventsInTown() {
-          // event.preventDefault();
-          var $artist = $('#bandName').text();
-          $('#info').html('<p>getting events with ' + $artist + '</p>');
-          //var $term = $('search-keyword').val();
-          var url = 'http://api.bandsintown.com/artists/' + $artist + '/events.json?api_version=2.0&app_id=johnk';
-
-          $.ajax({
-            url: url,
-            method: "GET",
-            data: {
-              format: 'json'
-           },
-           error: function() {
-              $('#info').html('<p>An error has occurred</p>');
-           },
-            dataType: 'jsonp',
-            success : function(data) {
-            // displayResults(data);
-            console.log(data);
-            return data;
-          }
-        });
-        }
           var bandEvents = searchEventsInTown();
 
           var JSON = [{
