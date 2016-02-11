@@ -1,4 +1,4 @@
-extends ../layout.jade
+include ../layout.jade
 
 block content
   .bandProfile.row
@@ -7,7 +7,7 @@ block content
         .profileImg.col.s6
           img(src='https://www.fillmurray.com/200/200')
         .col.s6
-          h3= band.name
+          h3(id="bandName")= band.name
           h5 @Twitter
       p= band.bio
       br
@@ -19,10 +19,13 @@ block content
   .calendar.row
     #calendar.s12
 
+
   script.
         $(document).ready(function() {
+            var bandEvents = searchEventsInTown();
+
             var JSON = [{
-              "title" : "Demo event",
+              "title" : bandEvents[0].title,
               "start" : "2016-2-15 22:20:00",
               "allDay" : true
                     }
@@ -31,4 +34,5 @@ block content
               events: JSON
             })
         });
+
 
