@@ -29,7 +29,10 @@ function searchEventsInTown() {
 
             });
             $('#calendar').fullCalendar({
-                    events: JSON
+                    events: JSON,
+                    eventClick: function(calEvent, jsEvent, view) {
+                        alert('Event: ' + calEvent.title);
+                    }
                 });
         }
     });
