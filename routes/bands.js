@@ -61,10 +61,13 @@ router.post('/', function(req, res) {
 //EDIT
 router.get('/:id/edit', function(req, res) {
   console.log('edit band');
+  console.log(currentUser._id);
   Band.findById(req.params.id)
     .then(function(band) {
+      console.log(band.creator)
       res.render('bands/edit', {
-        band: band
+        band: band,
+        user: currentUser._id
       });
     });
 });

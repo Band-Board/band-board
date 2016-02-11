@@ -2,6 +2,8 @@ extends ../layout.jade
 
 block content
     h1 Edit Band
-    form(name="bandForm", method="post", action='/bands/#{band.id}?_method=PUT')
+    if user.toString() === band.creator.toString()
+      form(name="bandForm", method="post", action='/bands/#{band.id}?_method=PUT')
         include _form
-
+    else
+      p THIS IS NOT YOURS. STOP THAT.
