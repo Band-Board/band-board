@@ -31,16 +31,14 @@ function searchEventsInTown() {
                         "allDay": true
                     });
                 });
-
                 $('#calendar').fullCalendar({
                     events: JSON
                 });
-
             } else {
                 var limit=0;
                 bandEvents.forEach(function(x) {
                     if (limit < 5) {
-                        $('.showDates').append("<li>" + x.title + " in " + x.formatted_location + "</li>");
+                        $showDates.append("<li>" + x.title + " in " + x.formatted_location + "</li>");
                         limit++;
                     }
                 });
@@ -54,7 +52,23 @@ function searchEventsInTown() {
 $('.seeTourDates').one('click', function(e) {
     e.preventDefault();
     $artist = $(this).siblings('.card-title').text();
+    $showDates = $(this).siblings('.showDates');
     searchEventsInTown();
+});
+
+$('.seeBandPage').on('click', function(e){
+    e.preventDefault();
+    console.log("YES");
+    var formName =  $(this).siblings('.card-title').text();
+    var formBio = 'Test';
+    var formImg = $(this).parents('.card').children('.card-image').children('img').attr('src');
+    console.log(formName);
+    console.log(formBio);
+    console.log(formImg);
+    $('#name').val(formName);
+    $('#img').val(formImg);
+    $('#bio').text(formBio);
+    $('#website').val('http://www.google.com');
 });
 
 $(document).ready(function() {

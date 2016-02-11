@@ -10,19 +10,37 @@ block content
                 img.activator(src=x.image_url)
               .card-content
                 span.card-title.activator= x.name
-                i(class="material-icons right") more_vert
+                i.activator(class="material-icons right") more_vert
                 //- p On Tour Now!
                 if x.upcoming_event_count > 0
                   p On Tour Now!
                 //- if x.dates.length > 0 || x.tourdates > 0
               .card-reveal
                 span(class='card-title')= x.name
-                i(class='material-icons right') close
+                i.activator(class='material-icons right') close
                 if x.upcoming_event_count > 0
                   p On Tour Now!
                   a.seeTourDates(href='#') See Tour Dates
+                  br
+                  a.seeBandPage(href='#') See Bands Page
                   ul.showDates
-
+    h1 New Band
+    .row
+      form.col.s12(name="bandForm", method="post", action='/bands')
+        .input-field.col.s12
+          label(for='name') Band Name
+          input(id='name', type="text", name="name")
+        .input-field.col.s12
+          label(for='bio') Bio
+          textarea.materialize-textarea(id="bio", name="bio")
+        .input-field.col.s6
+          label(for='img') Img Url
+          input(id="img" type="text", name="img")
+        .input-field.col.s6
+          label(for='website') Band Website
+            input(id='website', type="text", name="website")
+         button.btn.waves-effect.waves-light(type="submit" name='action') Submit
+           i.material-icons.right send
 
 
     //- div(class='col s12 m6 l4')

@@ -1,99 +1,105 @@
 @import 'styleguide.scss';
-
-.error{
-  color: black;
-  font-size: 24px;
+.error {
+    color: black;
+    font-size: 24px;
 }
 
 h1 {
-  margin: 0
+    margin: 0
 }
 
-.border-dark{
-  border-bottom: 10px solid $primaryDarkText;
-  box-shadow: 0 1px 0 0 $primaryDarkText;
+.border-dark {
+    border-bottom: 10px solid $primaryDarkText;
+    box-shadow: 0 1px 0 0 $primaryDarkText;
 }
 
 .brand-logo img {
-  margin: 10px
-}
-.material-icons.md-light{
-  color: $primaryLightText;
-}
-.material-icons.md-dark{
-  color: $primaryDarkText;
+    margin: 10px
 }
 
-.vert{
-  height: 300px;
-  border-right: 3px solid $dividersDark;
+.material-icons.md-light {
+    color: $primaryLightText;
 }
-.vr{color: $dividersDark;
-  }
+
+.material-icons.md-dark {
+    color: $primaryDarkText;
+}
+
+.vert {
+    height: 300px;
+    border-right: 3px solid $dividersDark;
+}
+
+.vr {
+    color: $dividersDark;
+}
 
 .card {
-  height: 400px;
-  padding: 5px;
-  font-size: 1rem;
-  .card-image {
-    overflow: hidden;
-    img{
-      // max-height: 250px;
+    height: 400px;
+    padding: 5px;
+    font-size: 1rem;
+    .card-image {
+        z-index: 3 overflow: hidden;
+        height: 300px;
+        overflow: hidden;
+        img {
+          height: 300px;
+          overflow: hidden;
+            // max-height: 250px;
+        }
+        .card-content {
+            z-index: 5
+        }
+        // min-width: 125px;
+        // max-width: 250px;
     }
-    // min-width: 125px;
-
-    // max-width: 250px;
-
-  }
 }
-.jumbotron {
-  margin-top: -64px;
-  background: url('../images/band_back.png') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  color: $primaryLightText;
-  .callToAction {
-      width: 75%;
-      text-align: center;
-      margin-top: 10px;
 
-    .largeCopy,
-    .smallerCopy {
+.jumbotron {
+    margin-top: -64px;
+    background: url('../images/band_back.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    color: $primaryLightText;
+    .callToAction {
+        width: 75%;
+        text-align: center;
+        margin-top: 10px;
+        .largeCopy,
+        .smallerCopy {}
+        .largeCopy {
+            font-size: 80px;
+            font-weight: bold;
+            line-height: 20%;
+        }
+        .smallerCopy {
+            font-size: 32px;
+            padding: 0 12.5%;
+            font-weight: light;
+            font-style: italic;
+        }
+        .btn-large {
+            margin: 0 10px;
+        }
     }
-    .largeCopy {
-      font-size: 80px;
-      font-weight: bold;
-      line-height: 20%;
-    }
-    .smallerCopy {
-      font-size: 32px;
-      padding: 0 12.5%;
-      font-weight: light;
-      font-style: italic;
-    }
-    .btn-large{
-      margin: 0 10px;
-    }
-  }
 }
 
 .transparent {
-  color: black;
+    color: black;
 }
 
-.nav{
-  background: #ADCAE6;
+.nav {
+    background: #ADCAE6;
 }
 
-.allSearchResults{
-  img.activator{
-    z-index: 0;
-  }
-  .card-content{
-    z-index: 1;
-  }
+.allSearchResults {
+    img.activator {
+        z-index: 0;
+    }
+    .card-content {
+        z-index: 1;
+    }
 }
-
 
 @import 'loginstyles.scss';
 @import 'userstyles.scss';
