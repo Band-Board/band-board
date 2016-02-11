@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
+
 router.get('/search', function(req, res, next) {
   var bandSearch = req.query['bandname'];
   console.log(bandSearch);
