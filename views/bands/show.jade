@@ -6,7 +6,7 @@ block content
       .imageBand.col.s6
         img(src=band.img)
       .col.s6.bandNames
-        h3= band.name
+        h3#bandName= band.name
         h5 @Twitter
     .bandInfo.col.s6
       p= band.bio
@@ -17,21 +17,3 @@ block content
       a(href='/bands') Back to Bands
   .calendar.row
     #calendar.s12
-
-
-  script.
-        $(document).ready(function() {
-            var bandEvents = searchEventsInTown();
-
-            var JSON = [{
-              "title" : bandEvents[0].title,
-              "start" : "2016-2-15 22:20:00",
-              "allDay" : true
-                    }
-            ];
-            $('#calendar').fullCalendar({
-              events: JSON
-            })
-        });
-
-
