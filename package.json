@@ -1,57 +1,72 @@
 {
-  "name": "band-board",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install && grunt build",
-    "start": "nodemon ./bin/www"
-  },
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "~1.13.2",
-    "bower": "^1.7.7",
-    "cloudinary": "^1.3.0",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "ejs": "^2.4.1",
-    "express": "~4.13.1",
-    "express-session": "^1.13.0",
-    "grunt": "^0.4.5",
-    "grunt-autoprefixer": "^3.0.3",
-    "grunt-cli": "0.1.11",
-    "grunt-concurrent": "^2.1.0",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-connect": "^0.11.2",
-    "grunt-contrib-cssmin": "^0.14.0",
-    "grunt-contrib-jasmine": "^1.0.0",
-    "grunt-contrib-jshint": "^0.12.0",
-    "grunt-contrib-uglify": "^0.11.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-nodemon": "^0.4.1",
-    "grunt-sass": "^1.1.0",
-    "jade": "~1.11.0",
-    "method-override": "^2.3.5",
-    "mongoose": "^4.4.2",
-    "morgan": "~1.6.1",
-    "passport": "^0.3.2",
-    "passport-facebook": "^2.1.0",
-    "passport-local": "^1.0.0",
-    "passport-spotify": "^0.3.0",
-    "passport-twitter": "^1.0.4",
-    "serve-favicon": "~2.3.0"
-  },
-  "devDependencies": {
-    "chai": "3.5.0",
-    "jasmine": "2.4.1",
-    "karma": "0.13.19",
-    "load-grunt-tasks": "^3.4.0",
-    "matchdep": "^1.0.0",
-    "mocha": "2.4.5",
-    "sinon": "1.17.3",
-    "supertest": "1.1.0"
-  },
-  "engines": {
-    "node": "5.1.1"
-  }
+    "name": "band-board",
+    "version": "0.0.0",
+    "contributors": [{
+        "name": "John Kirkley",
+        "email": "john@johnkirkley.com"
+        },{
+        "name": "Jamie King",
+        "email": "king0120@gmail.com"
+        }, {
+        "name": "Spencer Lewis",
+        "email": "spencerlewis987@gmail.com"
+    }],
+    "private": true,
+    "scripts": {
+        "postinstall": "./node_modules/bower/bin/bower install && grunt build",
+        "start": "nodemon ./bin/www"
+    },
+    "dependencies": {
+        "async": "^1.5.2",
+        "bcrypt-nodejs": "0.0.3",
+        "body-parser": "~1.13.2",
+        "bower": "^1.7.7",
+        "cloudinary": "^1.3.0",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "~1.3.5",
+        "debug": "~2.2.0",
+        "ejs": "^2.4.1",
+        "express": "~4.13.1",
+        "express-session": "^1.13.0",
+        "grunt": "^0.4.5",
+        "grunt-autoprefixer": "^3.0.3",
+        "grunt-cli": "0.1.11",
+        "grunt-concurrent": "^2.1.0",
+        "grunt-contrib-concat": "^0.5.1",
+        "grunt-contrib-connect": "^0.11.2",
+        "grunt-contrib-cssmin": "^0.14.0",
+        "grunt-contrib-jasmine": "^1.0.0",
+        "grunt-contrib-jshint": "^0.12.0",
+        "grunt-contrib-uglify": "^0.11.1",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-nodemon": "^0.4.1",
+        "grunt-sass": "^1.1.0",
+        "jade": "~1.11.0",
+        "jquery": "^2.2.0",
+        "jsdom": "^3.1.2",
+        "method-override": "^2.3.5",
+        "mongoose": "^4.4.2",
+        "morgan": "~1.6.1",
+        "passport": "^0.3.2",
+        "passport-facebook": "^2.1.0",
+        "passport-local": "^1.0.0",
+        "passport-spotify": "^0.3.0",
+        "passport-twitter": "^1.0.4",
+        "request": "^2.69.0",
+        "request-promise": "^2.0.0",
+        "serve-favicon": "~2.3.0"
+    },
+    "devDependencies": {
+        "chai": "3.5.0",
+        "jasmine": "2.4.1",
+        "karma": "0.13.19",
+        "load-grunt-tasks": "^3.4.0",
+        "matchdep": "^1.0.0",
+        "mocha": "2.4.5",
+        "sinon": "1.17.3",
+        "supertest": "1.1.0"
+    },
+    "engines": {
+        "node": "5.1.1"
+    }
 }

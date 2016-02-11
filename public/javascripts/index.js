@@ -5,13 +5,8 @@ $(document).ready(function() {
     edge: 'right', // Choose the horizontal origin
     closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
   });
-
-  if ($('main').is('.searchPage')) {
-    var band = $('#searchResult').text();
-    console.log(band);
-    searchSpotify(band);
-  }
 });
+<<<<<<< HEAD
 
 
 function searchSpotify(req) {
@@ -84,3 +79,5 @@ $(function() {
 //   return band;
 // }
 
+=======
+>>>>>>> refs/remotes/origin/master

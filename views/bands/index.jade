@@ -1,24 +1,27 @@
 include ../layout.jade
 
-h1 Bands Index view
 
 
-a(href='/bands/new') New band
+h1
+  a(href='/bands/new') Add band
 
 div
-  h1 Bands:
+  h1 Database Bands:
     h3
-      ul
-        each band in bands
-          li= band.name
-            ul
-              li
-                a(href="/bands/#{band.id}") Band show
-              li= band.bio
-              li= band.img
-              li= band.website
-              li= band.creator
-              li= band.dates
-
+      .allSearchResults.row
+        each x in bands
+            div(class='col s12 m6 l4')
+              div(class='card')
+                div(class='card-image waves effect waves-block waves-light')
+                  img(class='activator', src=x.img)
+                div(class='card-content')
+                  span(class='card-title flow-text activator')=x.name
+                    i(class="material-icons right") more_vert
+                  if x.dates.length > 0 || x.tourdates > 0
+                    p On Tour Now!
+                div(class='card-reveal')
+                  span(class='card-title')
+                    a(href='/bands/#{x.id}') Show Band
+                    i(class='material-icons right') close
 
 
