@@ -2,15 +2,58 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var Band = require('../models/band');
+var Event = require('../models/event');
 var User = require('../models/user');
+
+var authenticate = function(req, res, next) {
+  if(!req.isAuthenticated()) {
+    res.redirect('/');
+  }
+  else {
+    next();
+  }
+};
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  // var user = currentUser
-  // console.log(currentUser)
-  // console.log(currentUser._id)
-  // console.log(user.id)
-  res.render('users/show');
+   var user = currentUser;
+   //console.log(user);
+   console.log(user._id);
+   //console.log(user.id);
+  res.render('users/show', {
+    user: user
+  });
+});
+
+//EDIT
+router.get('/:id/edit', function(req, res) {
+  console.log(req.params.id);
+  User.findById(req.params.id)
+    .then(function(user) {
+    //var user = currentUser.local;
+      console.log(user);
+      res.render('users/edit', {
+      user: user
+
+      });
+    });
+});
+
+//UPDATE
+router.put('/:id', function(req, res) {
+  console.log("update user");
+  User.findById(req.params.id)
+    .then(function(user) {
+      user.local.name = req.body.name;
+      user.local.email = req.body.email;
+      user.local.password = req.body.password;
+      user.local.image = req.body.image;
+      user.local.twitter = req.body.twitter;
+      return user.save();
+    })
+    .then(function(saved) {
+      res.redirect('/user');
+    });
 });
 
 router.get('/bands', function(req, res, next) {

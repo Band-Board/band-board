@@ -1,13 +1,12 @@
 function searchEventsInTown() {
     // event.preventDefault();
     console.log('hello from events in town');
-    if ($artist === undefined) {
+    if ($('#bandName').text() !== "") {
         $artist = $('#bandName').text();
     }
     $('#info').html('<p>getting events with ' + $artist + '</p>');
     //var $term = $('search-keyword').val();
     var url = 'http://api.bandsintown.com/artists/' + $artist + '/events.json?api_version=2.0&app_id=johnk';
-
     $.ajax({
         url: url,
         method: "GET",
@@ -31,10 +30,14 @@ function searchEventsInTown() {
                         "allDay": true
                     });
                 });
-                $('#calendar').fullCalendar({
-                    events: JSON
+            $('#calendar').fullCalendar({
+                    events: JSON,
+                    eventClick: function(calEvent, jsEvent, view) {
+                        alert('Event: ' + calEvent.title);
+                    }
                 });
-            } else {
+            }
+            else {
                 var limit=0;
                 bandEvents.forEach(function(x) {
                     if (limit < 5) {
@@ -43,11 +46,11 @@ function searchEventsInTown() {
                     }
                 });
             }
-
         }
     });
-
 }
+
+
 
 $('.seeTourDates').one('click', function(e) {
     e.preventDefault();
@@ -77,9 +80,9 @@ $(document).ready(function() {
         menuWidth: 300, // Default is 240
         edge: 'right', // Choose the horizontal origin
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-
     });
     if ($('.userProfile').length === 1 || $('.bandProfile').length === 1) {
         searchEventsInTown();
     }
 });
+

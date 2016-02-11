@@ -25,6 +25,21 @@ h1 {
 .vr {
   color: #3c3c3c; }
 
+.card {
+  height: 400px;
+  padding: 5px;
+  font-size: 1rem; }
+  .card .card-image {
+    z-index: 3;
+    overflow: hidden;
+    height: 300px;
+    overflow: hidden; }
+    .card .card-image img {
+      height: 300px;
+      overflow: hidden; }
+    .card .card-image .card-content {
+      z-index: 5; }
+
 .jumbotron {
   margin-top: -64px;
   background: url("../images/band_back.png") no-repeat center center fixed;
