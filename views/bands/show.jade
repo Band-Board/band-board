@@ -6,7 +6,7 @@ block content
       .imageBand
         img(src=band.img)
       .bandNames
-        h3#bandName= band.name
+        h3(id='bandName')= band.name
         h5 @Twitter
     .bandInfo.col.s6
       p= band.bio

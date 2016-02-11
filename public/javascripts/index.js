@@ -1,7 +1,7 @@
 function searchEventsInTown() {
     // event.preventDefault();
     console.log('hello from events in town');
-    if ($artist === undefined) {
+    if ($('#bandName').text() !== "") {
         $artist = $('#bandName').text();
     }
     $('#info').html('<p>getting events with ' + $artist + '</p>');
