@@ -23,6 +23,7 @@ var CLOUDINARY_URL = config.CLOUDINARY_URL;
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var bandsRouter = require('./routes/bands');
+var eventsRouter = require('./routes/events');
 
 var app = express();
 
@@ -55,7 +56,7 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
 app.use('/bands', bandsRouter);
-
+app.use('/events', eventsRouter);
 
 //image upload
 

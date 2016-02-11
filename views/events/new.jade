@@ -1,0 +1,9 @@
+extends ../layout.jade
+
+block content
+    h1 New Event
+    .row
+      form.col.s12(name="bandForm", method="post", action='/events')
+        include _form
+
+a(href='/events') Back

@@ -7,8 +7,7 @@ var EventSchema = new mongoose.Schema({
     },
 
     title: {
-        type: String,
-        required: true
+        type: String
     },
     datetime: {
         type: String
@@ -27,8 +26,7 @@ var EventSchema = new mongoose.Schema({
         type: String
     },
     img: {
-        type: String,
-        required: true
+        type: String
     },
     on_sale_datetime: {
         type: String
@@ -41,8 +39,7 @@ var EventSchema = new mongoose.Schema({
     },
 
     artists: {
-        type: [String],
-        required: true
+        type: [String]
     },
     venue: {
         type: String

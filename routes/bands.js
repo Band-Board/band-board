@@ -1,9 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var Band = require('../models/band');
-//var cloudinary = require('cloudinary');
-//var config = require('../config/config.js').get(process.env.NODE_ENV);
-//var CLOUDINARY_URL = config.CLOUDINARY_URL;
 
 
 //INDEX

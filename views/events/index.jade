@@ -1,0 +1,14 @@
+include ../layout.jade
+
+    form#search-events
+      h1 Search Events
+      input#search-keyword(type='search')
+      input(type='submit', value='Submit')
+    ul#results
+
+a(href='/events/new') New Event
+
+div
+  h1 Events:
+    h3
+      #info
