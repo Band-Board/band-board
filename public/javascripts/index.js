@@ -1,83 +1,18 @@
-
 $(document).ready(function() {
-  $('.button-collapse').sideNav({
-    menuWidth: 300, // Default is 240
-    edge: 'right', // Choose the horizontal origin
-    closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-  });
-});
-<<<<<<< HEAD
+    $('.button-collapse').sideNav({
+        menuWidth: 300, // Default is 240
+        edge: 'right', // Choose the horizontal origin
+        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
 
-
-function searchSpotify(req) {
-  $.getJSON('https://api.spotify.com/v1/search?q=' + req + '&type=artist', {})
-    .done(searchBandsInTown);
-}
-
-function searchBandsInTown(req) {
-  console.log(req.artists.items);
-  req.artists.items.forEach(function(artist) {
-
-    $.getJSON('http://api.bandsintown.com/artists/' + artist.name + '.json?callback=?', {
-
-      app_id: 'test',
-      api_version: '2.0'
-    }, function(x) {
-      if (x !== undefined && x.errors === undefined) {
-        console.log(x);
-        $('.allSearchResults').append("<div class='col s6 m4 l3'><div class='card'><div class='card-image waves-effect waves-block waves-light'><img class='activator' src=" + x.image_url + '></div><div class= "card-content"><span class="card-title flow-text activator">' +
-          x.name +
-          '</div><div class= "card-reveal"><span class="card-title">' +
-          x.name +
-          '</div></div></div>'
-        );
-      }
     });
-  });
-}
-
-function error (event) {
-  $('#info').html('<p>An error has occurred</p>');
-}
-
-
-
-function searchEventsInTown(event) {
-  event.preventDefault();
-  var $artist = $("#search-events").val();
-  $('#info').html('<p>getting events with ' + $artist + '</p>');
-  //var $term = $('search-keyword').val();
-  var url = 'http://api.bandsintown.com/artists/' + $artist + '/events.json?api_version=2.0&app_id=johnk';
-
-  $.ajax({
-    url: url,
-    method: "GET",
-    data: {
-      format: 'json'
-   },
-   error: function() {
-      $('#info').html('<p>An error has occurred</p>');
-   },
-    dataType: 'jsonp',
-    success : function(data) {
-    displayResults(data);
-  }
+    if ($('.userProfile').length || $('.bandProfile').length) {
+        var JSON = [{
+            "title": "Demo event",
+            "start": "2016-2-15 22:20:00",
+            "allDay": true
+        }];
+        $('#calendar').fullCalendar({
+            events: JSON
+        });
+    }
 });
-}
-
-function displayResults(data) {
-  $('#info').html('<p>' + data[0].title + ' stuff</P>');
-}
-
-$(function() {
-  $('form#search input[type=submit]').on("click", searchEventsInTown);
-});
-
-//   function searchDatabase(band) {
-//   var band = Band.findOne( {"name" : band});
-//   console.log(band);
-//   return band;
-// }
-
-=======
->>>>>>> refs/remotes/origin/master
