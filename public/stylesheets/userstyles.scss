@@ -1,0 +1,19 @@
+.userProfile{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  .aside{
+    background: $darkPrimary;
+    height: 100%;
+  }
+  .profileImg{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 100px;
+    img{
+      border-radius: 100px;
+    }
+  }
+}

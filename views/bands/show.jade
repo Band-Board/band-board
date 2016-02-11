@@ -1,17 +1,34 @@
 extends ../layout.jade
 
 block content
+  .bandProfile.row
+    .bandInfo.col.s6
+      .row
+        .profileImg.col.s6
+          img(src='https://www.fillmurray.com/200/200')
+        .col.s6
+          h3= band.name
+          h5 @Twitter
+      p= band.bio
+      br
+      a(href=band.website) Bands Website
+      br
+      a(href='/bands') Back to Bands
+    .bandInfo.col.s6
+      iframe(width="450px" height="315px" src="https://www.youtube.com/embed/ULYTqO2YDuU", frameborder="0", allowfullscreen)
+  .calendar.row
+    #calendar.s12
 
-  ul
-    li
-      h1= band.name
-    li= band.bio
-    li
-      img(src=band.img)
-    li
-      a(href=band.website) Band website
 
-
-
-  br
-  a(href='/bands') Back to Bands
+  script.
+        $(document).ready(function() {
+            var JSON = [{
+              "title" : "Demo event",
+              "start" : "2016-2-15 22:20:00",
+              "allDay" : true
+                    }
+            ];
+            $('#calendar').fullCalendar({
+              events: JSON
+            })
+        });
