@@ -1,7 +1,12 @@
 .userProfile{
-  position: relative;
   height: 100vh;
   width: 100vw;
+  .imageBand{
+    height: 75%;
+    img{
+      height: 100%;
+    }
+  }
   .aside{
     background: $darkPrimary;
     height: 100%;

@@ -65,7 +65,7 @@ router.get('/:id/edit', function(req, res) {
   console.log(currentUser._id);
   Band.findById(req.params.id)
     .then(function(band) {
-      console.log(band.creator)
+      console.log(band.creator);
       res.render('bands/edit', {
         band: band,
         user: currentUser._id

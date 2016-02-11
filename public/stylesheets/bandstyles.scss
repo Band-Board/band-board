@@ -1,14 +1,19 @@
 .bandProfile{
   position: relative;
   height: 50vh;
-  .bandInfo{
-    margin-top: -10px;
-    background: $darkPrimary;
-    iframe{
-      width: 450px;
-      margin: 0 auto;
-    }
+  background: $darkPrimary;
+  .imageBand{
     height: 100%;
+    img{
+      height: 100%;
+    }
+  }
+  .bandInfo{
+    background: $darkPrimary;
+    height: 80%;
+  }
+  .bandLinks{
+    height: 19%;
   }
   .profileImg{
     height: 150px;
@@ -24,4 +29,9 @@
 
 .calendar.row{
   margin-top: 50px;
+}
+
+.bandNames{
+    color: green;
+    padding-left: 25px;
 }

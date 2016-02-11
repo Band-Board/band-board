@@ -30,7 +30,7 @@ h1 {
   padding: 5px;
   font-size: 1rem; }
   .card .card-image {
-    height: 250px; }
+    overflow: hidden; }
 
 .jumbotron {
   margin-top: -64px;
@@ -107,9 +107,12 @@ h1 {
   margin: 5px auto; }
 
 .userProfile {
-  position: relative;
   height: 100vh;
   width: 100vw; }
+  .userProfile .imageBand {
+    height: 75%; }
+    .userProfile .imageBand img {
+      height: 100%; }
   .userProfile .aside {
     background: #0277BD;
     height: 100%; }
@@ -124,14 +127,17 @@ h1 {
 
 .bandProfile {
   position: relative;
-  height: 50vh; }
-  .bandProfile .bandInfo {
-    margin-top: -10px;
-    background: #0277BD;
+  height: 50vh;
+  background: #0277BD; }
+  .bandProfile .imageBand {
     height: 100%; }
-    .bandProfile .bandInfo iframe {
-      width: 450px;
-      margin: 0 auto; }
+    .bandProfile .imageBand img {
+      height: 100%; }
+  .bandProfile .bandInfo {
+    background: #0277BD;
+    height: 80%; }
+  .bandProfile .bandLinks {
+    height: 19%; }
   .bandProfile .profileImg {
     height: 150px;
     width: 150px;
@@ -143,3 +149,7 @@ h1 {
 
 .calendar.row {
   margin-top: 50px; }
+
+.bandNames {
+  color: green;
+  padding-left: 25px; }
