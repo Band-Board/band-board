@@ -1,5 +1,23 @@
 include ../layout.jade
 
-h1 Profiles
+
+h1 Profile
   br
   a(href='/user/bands') My Bands
+
+
+div(id='calendar')
+
+
+script.
+      $(document).ready(function() {
+          var JSON = [{
+            "title" : "Demo event",
+            "start" : "2016-2-15 22:20:00",
+            "allDay" : true
+                  }
+          ];
+          $('#calendar').fullCalendar({
+            events: JSON
+          })
+      });

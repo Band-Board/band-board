@@ -29,7 +29,7 @@ h1 {
   height: 400px;
   padding: 5px;
   font-size: 1rem; }
-  .card .card-image img {
+  .card .card-image {
     height: 250px; }
 
 .jumbotron {
@@ -59,6 +59,12 @@ h1 {
 
 .nav {
   background: #ADCAE6; }
+
+.allSearchResults img.activator {
+  z-index: 0; }
+
+.allSearchResults .card-content {
+  z-index: 1; }
 
 .largeLogo {
   width: 40%;

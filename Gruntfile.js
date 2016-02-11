@@ -49,6 +49,8 @@ module.exports = function(grunt) {
         files: {
           './build/javascripts/jquery.min.js': './bower_components/jquery/dist/jquery.min.js',
           './build/javascripts/materialize.min.js': './bower_components/Materialize/dist/js/materialize.min.js',
+          './build/javascripts/moment.min.js': './bower_components/moment/min/moment.min.js',
+          './build/javascripts/fullcalendar.min.js': './bower_components/fullcalendar/dist/fullcalendar.min.js',
           '<%=jsDistDir%><%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
         }
       }
