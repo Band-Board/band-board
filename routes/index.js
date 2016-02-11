@@ -13,26 +13,20 @@ router.get('/', function(req, res, next) {
   });
 });
 
-<<<<<<< HEAD
-router.get('/search', function(req, res, next){
-  var band = req.query['bandname'];
-
-  console.log(band);
-  Band.find({"name" : band})
-=======
 router.get('/search', function(req, res, next) {
   var bandSearch = req.query['bandname'];
   Band.find({
       "name": bandSearch
-    })
->>>>>>> refs/remotes/origin/master
-    .then(function(band) {
-      console.log(band);
+    }).then(function(band) {
+
       if (band.length > 0) {
-        console.log("didn't render locally");
+        band.forEach(function(x){
+           x.image_url= x.img,
+           x.upcoming_event_count = x.dates.length;
+        });
+        console.log('rendering from local');
         res.render('search.jade', {
-          band: 'band',
-          a: 'if'
+          band: band
         });
       } else {
         console.log(Ajax.working);
