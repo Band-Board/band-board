@@ -10,7 +10,7 @@
         }, {
         "name": "Spencer Lewis",
         "email": "spencerlewis987@gmail.com"
-    }]
+    }],
     "private": true,
     "scripts": {
         "postinstall": "./node_modules/bower/bin/bower install && grunt build",
