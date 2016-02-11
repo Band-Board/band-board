@@ -10,14 +10,18 @@ block content
                 img.activator(src=x.image_url)
               .card-content
                 span.card-title.activator= x.name
-                  i(class="material-icons right") more_vert
+                i(class="material-icons right") more_vert
                 //- p On Tour Now!
                 if x.upcoming_event_count > 0
                   p On Tour Now!
                 //- if x.dates.length > 0 || x.tourdates > 0
               .card-reveal
-                span(class='card-title')=x.name
-                  i(class='material-icons right') close
+                span(class='card-title')= x.name
+                i(class='material-icons right') close
+                if x.upcoming_event_count > 0
+                  p On Tour Now!
+                  a.seeTourDates(href='#') See Tour Dates
+                  ul.showDates
 
 
 
