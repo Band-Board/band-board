@@ -11,7 +11,7 @@ include ../layout.jade
         h3
           a(href='/user/'+ user._id + '/edit') Add Your Info
       else
-        h3= user.local.name
+        h4#username= user.local.name
         h5
           a(href=user.local.twitter, target="_blank") twitter
         br
