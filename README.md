@@ -2,11 +2,19 @@
 -----------------
 WDI ATL Project 3
 -----------------
-Heroku: https://band-board.herokuapp.com/
 
-Github: https://github.com/Band-Board/band-board
+ERD: https://www.draw.io/#G0B1L2qPBxL7GqaFJ0R2Zxa3BJY2s
 
 Trello Board: https://trello.com/b/biR3LVQ8/app-planning
+
+Github: https://github.com/Band-Board/band-board
+----------------------------
+Demo:
+----------------------------
+
+Heroku: https://band-board.herokuapp.com/
+
+
 ----------------------------
 Included in this repository:
 ----------------------------
@@ -38,11 +46,23 @@ of their watch-listed bands.
 -------
 To Run:
 -------
-1. The Application can be accessed online:
-  - https://band-board.herokuapp.com/
 
-2. The repo for the application can also be accessed via Github.
+1. The repo for the application can also be accessed via Github.
   - https://github.com/Band-Board/band-board
+
+2. git clone https://github.com/Band-Board/band-board.git
+
+3. npm install
+
+4. grunt build
+
+RUN!
+
+5. grunt
+
+
+
+
 
 -----------------
 Technologies Used
@@ -60,6 +80,9 @@ Technologies Used
 -Passport Package
 
 -Heroku: https://band-board.herokuapp.com/
+
+-full calendar
+
 -----------------
 Planned Additions
 -----------------
