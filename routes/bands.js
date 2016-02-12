@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Band = require('../models/band');
+var passport = require('passport');
 
 
 //INDEX
@@ -34,9 +35,16 @@ router.get('/:id', function(req, res) {
   console.log('Show band');
   Band.findById(req.params.id)
     .then(function(band) {
-      res.render('bands/show', {
+
+      if (currentUser){res.render('bands/show', {
+        band: band,
+        user: currentUser.id
+      });} else {
+        res.render('bands/show', {
         band: band
       });
+      }
+
     });
 });
 

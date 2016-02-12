@@ -28,4 +28,6 @@ block content
       ul.bandsPlaying
     .modal-footer
       a(href="#!" class="ticketLink modal-action modal-close waves-effect waves-green btn-flat") Buy A Ticket!
-      a(href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat") Add to My Calendar
+      a(href="#!" class="addCal modal-action modal-close waves-effect waves-green btn-flat") Add to My Calendar
+  if (user)
+    p.hide.cUser= user

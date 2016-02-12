@@ -1,27 +1,59 @@
 function openModal(event) {
-    console.log(event.title);
+    console.log(event);
     $('.showTitle').text(event.title);
     $('.datetime').text(event.formatted_datetime);
-    $('.venue').text(event.venue.name +", " + event.formatted_location);
+    $('.venue').text(event.venue + ", " + event.formatted_location);
     $('.rsvp').attr('href', event.facebook_rsvp);
-    if (event.ticket_status === 'available'){
+    if (event.ticket_status === 'available') {
         $('.availability').text('Tickets Available!');
     } else {
-        $('.availability').text('Sold Out!');
+        $('.availability').text(event.ticket_status);
     }
-    if (event.artists.length > 0){
+    if ($('.bandProfile').length === 1) {
         var i = 0;
         $('.bandsPlaying').text('');
-        event.artists.forEach(function(x){
-            if (i < 3){
-            $('.bandsPlaying').append('<li class="inline"><a href=' + x.website+ '><img src=' + x.thumb_url + ' width="100px" height="100px"><p>' + x.name + '</a></li>');
-            i++;
-        }
+        event.artists.forEach(function(x) {
+            if (i < 3) {
+                $('.bandsPlaying').append('<li class="inline"><a href=' + x.website + '><img src=' + x.thumb_url + ' width="100px" height="100px"><p>' + x.name + '</a></li>');
+                i++;
+            }
         });
     }
     $('.ticketLink').attr('href', event.ticket_url);
     $('#modal1').openModal();
+
+
+    $('.addCal').one('click', function(){
+    console.log('event: ' + event);
+    console.log(event);
+    var currentUser = $('.cUser').text();
+    $.ajax({
+        url: '/user/' + currentUser,
+        method: 'PUT',
+        data: {
+            "title": event.title,
+            "start": event.datetime,
+            "artists": event.artists,
+            "datetime": event.datetime,
+            "description": event.description,
+            "facebook_rsvp": event.facebook_rsvp,
+            "formatted_datetime": event.formatted_datetime,
+            "formatted_location": event.formatted_location,
+            "on_sale": event.on_sale,
+            "ticket_status": event.ticket_status,
+            "ticket_type": event.ticket_type,
+            "ticket_url": event.ticket_url,
+            "venue": event.venue
+        },
+        dataType: 'json'
+    });
+    $(this).html('<i class="material-icons">check</i>');
+});
+
+
 }
+
+
 
 
 function searchEventsInTown() {
@@ -65,14 +97,13 @@ function searchEventsInTown() {
                         "ticket_status": x.ticket_status,
                         "ticket_type": x.ticket_type,
                         "ticket_url": x.ticket_url,
-                        "venue": x.venue,
+                        "venue": x.venue.name
                     });
 
                 });
                 $('#calendar').fullCalendar({
                     events: JSON,
                     eventClick: function(calEvent, jsEvent, view) {
-                        console.log(calEvent);
                         openModal(calEvent);
                     }
                 });
@@ -121,21 +152,18 @@ $(document).ready(function() {
         searchEventsInTown();
     }
     if ($('.userProfile').length === 1) {
-        userEvents = [];
-        console.log(userEvents);
-        userEvents.forEach(function(x) {
-            JSON.push({
-                "title": x.title,
-                "start": x.datetime,
-                "allDay": true
-            });
-        });
-        $('#calendar').fullCalendar({
-            //- events: JSON,
-            eventClick: function(calEvent, jsEvent, view) {
-                openModal(userEvents);
+        $.ajax({
+            url: '/user/userCalendar',
+            method: 'GET',
+            success: function(data) {
+                $('#calendar').fullCalendar({
+                    events: data,
+                    eventClick: function(calEvent, jsEvent, view) {
+                        console.log(data);
+                        openModal(calEvent);
+                    }
+                });
             }
         });
-
     }
 });
