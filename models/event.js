@@ -25,10 +25,10 @@ var EventSchema = new mongoose.Schema({
     ticket_type: {
         type: String
     },
-    img: {
-        type: String
+    artists: {
+        type: Object
     },
-    on_sale_datetime: {
+    on_sale: {
         type: String
     },
     facebook_rsvp_url: {
@@ -37,12 +37,8 @@ var EventSchema = new mongoose.Schema({
     description: {
         type: String
     },
-
-    artists: {
-        type: [String]
-    },
     venue: {
-        type: String
+        type: Object
     }
 });
 

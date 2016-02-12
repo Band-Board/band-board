@@ -19,10 +19,14 @@ router.get('/', function(req, res, next) {
    //console.log(user);
    console.log(user._id);
    //console.log(user.id);
+   console.log(user.events);
+   console.log(user.events.length);
   res.render('users/show', {
-    user: user
+    user: user,
+    events: user.events
   });
 });
+
 
 //EDIT
 router.get('/:id/edit', function(req, res) {
@@ -40,14 +44,22 @@ router.get('/:id/edit', function(req, res) {
 //UPDATE
 router.put('/:id', function(req, res) {
   console.log("update user");
+  console.log(req.body);
   User.findById(req.params.id)
     .then(function(user) {
+      if (req.body.name){
       user.local.name = req.body.name;
       user.local.email = req.body.email;
       // user.local.password = req.body.password;
       user.local.image = req.body.image;
       user.local.twitter = req.body.twitter;
       return user.save();
+    } else if (req.body.title){
+      console.log('UPDATEEEEEE');
+      console.log(user.events.length);
+      user.events.push(req.body);
+      return user.save();
+    }
     })
     .then(function(saved) {
       res.redirect('/user');
@@ -57,10 +69,21 @@ router.put('/:id', function(req, res) {
 router.get('/bands', function(req, res, next) {
 User.findById(currentUser._id).populate("bands")
     .then(function(user) {
-      console.log(user)
+      console.log(user);
       res.render('users/bands', {bands: user.bands} );
       });
 });
+
+router.get('/userCalendar', function(req, res, next) {
+   user = currentUser;
+   //console.log(user);
+   console.log(user._id);
+   //console.log(user.id);
+   console.log(user.events);
+   console.log(user.events.length);
+  res.json(user.events);
+});
+
 
 module.exports = router;
 

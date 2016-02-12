@@ -21,3 +21,15 @@ include ../layout.jade
         a(href='/user/'+ user._id + '/edit') Add Info
   .calendar.col.s9
     #calendar
+  #modal1.modal
+    .modal-content
+      h4.showTitle Modal Header
+      p.datetime
+      p.venue A bunch of text
+      p.availability
+      a.rsvp(href="#!") RSVP on Facebook
+      ul.bandsPlaying
+    .modal-footer
+      a(href="#!" class="ticketLink modal-action modal-close waves-effect waves-green btn-flat") Buy A Ticket!
+
+

@@ -12,7 +12,8 @@ var User = new mongoose.Schema({
 
   },
   bands : [{ type: mongoose.Schema.ObjectId, ref: 'Band' }],
-  events: [{ type: mongoose.Schema.ObjectId, ref: 'Event' }]
+  //events: [{ type: mongoose.Schema.ObjectId, ref: 'Event' }]
+  events: []
 });
 
 User.methods.encrypt = function(password) {
