@@ -54,8 +54,10 @@ router.post('/', function(req, res) {
   band.save()
     .then(function(saved) {
       req.user.bands.push(saved.id);
-      req.user.save()
-      res.redirect('/bands');
+      req.user.save();
+      console.log('saved');
+      console.log(saved);
+      res.redirect('/bands/' + saved._id);
     });
 });
 

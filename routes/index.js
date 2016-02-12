@@ -7,6 +7,9 @@ var Band = require('../models/band');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  if (currentUser){
+    console.log(currentUser);
+  }
   res.render('index', {
     title: 'BandBoard',
     nav: true
@@ -50,7 +53,7 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
   console.log('you found the /signup post route');
   var signUpStrategy = passport.authenticate('local-signup', {
-    successRedirect: 'index',
+    successRedirect: '/user',
     failureRedirect: '/signup',
     failureFlash: true
   });
@@ -69,7 +72,7 @@ router.get('/login', function(req, res, next) {
 // POST /login
 router.post('/login', function(req, res, next) {
   var loginProperty = passport.authenticate('local-login', {
-    successRedirect: '/',
+    successRedirect: '/user',
     failureRedirect: '/login',
     failureFlash: true
   });

@@ -25,10 +25,17 @@ h1 {
 .vr {
   color: #3c3c3c; }
 
+.manuallyAdd {
+  width: 100vw;
+  height: 50px;
+  margin: 10px; }
+
 .card {
   height: 400px;
   padding: 5px;
   font-size: 1rem; }
+  .card .card-reveal {
+    z-index: 1000; }
   .card .card-image {
     z-index: 3;
     overflow: hidden;
@@ -125,13 +132,15 @@ h1 {
     background: #0277BD;
     height: 100%; }
   .userProfile .profileImg {
-    height: 200px;
-    width: 200px;
+    height: 90%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 100px; }
     .userProfile .profileImg img {
-      border-radius: 100px; }
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 100%; }
 
 .bandProfile {
   position: relative;

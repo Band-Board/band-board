@@ -24,8 +24,7 @@ block content
                   br
                   a.seeBandPage(href='#') See Bands Page
                   ul.showDates
-    h1 New Band
-    .row
+    .row.hide
       form.col.s12(name="bandForm", method="post", action='/bands')
         .input-field.col.s12
           label(for='name') Band Name

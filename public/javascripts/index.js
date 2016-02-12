@@ -30,18 +30,17 @@ function searchEventsInTown() {
                         "allDay": true
                     });
                 });
-            $('#calendar').fullCalendar({
+                $('#calendar').fullCalendar({
                     events: JSON,
                     eventClick: function(calEvent, jsEvent, view) {
                         alert('Event: ' + calEvent.title);
                     }
                 });
-            }
-            else {
-                var limit=0;
+            } else {
+                var limit = 0;
                 bandEvents.forEach(function(x) {
                     if (limit < 5) {
-                        $showDates.append("<li>" + x.title + " in " + x.formatted_location + "</li>");
+                        $showDates.append("<li>" + x.title + " in " + x.formatted_location + "</li><br/>");
                         limit++;
                     }
                 });
@@ -59,19 +58,16 @@ $('.seeTourDates').one('click', function(e) {
     searchEventsInTown();
 });
 
-$('.seeBandPage').on('click', function(e){
+$('.seeBandPage').on('click', function(e) {
     e.preventDefault();
-    console.log("YES");
-    var formName =  $(this).siblings('.card-title').text();
+    var formName = $(this).siblings('.card-title').text();
     var formBio = 'Test';
     var formImg = $(this).parents('.card').children('.card-image').children('img').attr('src');
-    console.log(formName);
-    console.log(formBio);
-    console.log(formImg);
     $('#name').val(formName);
     $('#img').val(formImg);
     $('#bio').text(formBio);
     $('#website').val('http://www.google.com');
+    $('form').submit();
 });
 
 $(document).ready(function() {
@@ -81,8 +77,25 @@ $(document).ready(function() {
         edge: 'right', // Choose the horizontal origin
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     });
-    if ($('.userProfile').length === 1 || $('.bandProfile').length === 1) {
+    if ($('.bandProfile').length === 1) {
         searchEventsInTown();
     }
-});
+    if ($('.userProfile').length === 1) {
+        userEvents = [];
+        console.log(userEvents);
+        userEvents.forEach(function(x) {
+            JSON.push({
+                "title": x.title,
+                "start": x.datetime,
+                "allDay": true
+            });
+        });
+        $('#calendar').fullCalendar({
+            //- events: JSON,
+            eventClick: function(calEvent, jsEvent, view) {
+                alert('Event: ' + calEvent.title);
+            }
+        });
 
+    }
+});
