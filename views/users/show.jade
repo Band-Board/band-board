@@ -3,13 +3,24 @@ include ../layout.jade
 .userProfile.row
   .aside.col.s3.z-depth-2
     .profileImg
-      img(src='https://www.fillmurray.com/200/200')
-    h3 Username
-    h5 @Twitter
-    br
-    a(href='/user/bands') My Bands
+      if !user.local.image
+        img(src='./images/user_placeholder.png')
+      else
+        img(src="#{user.local.image}")
+      if !user.local.name
+        h3
+          a(href='/user/'+ user._id + '/edit') Add Your Info
+      else
+        h3= user.local.name
+        h5= user.local.twitter
+        br
+        a(href='/user/bands') My Bands
+        br
+        br
+        a(href='/user/'+ user._id + '/edit') Add Info
   .calendar.col.s9
     #calendar
+
 
 h1 Profile
   a(href="/user/#{user._id}/edit") Edit
@@ -28,3 +39,4 @@ h1 Profile
               events: JSON
             })
         });
+

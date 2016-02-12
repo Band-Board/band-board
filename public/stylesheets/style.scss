@@ -34,10 +34,19 @@ h1 {
     color: $dividersDark;
 }
 
+.manuallyAdd{
+  width: 100vw;
+  height: 50px;
+  margin: 10px;
+}
+
 .card {
     height: 400px;
     padding: 5px;
     font-size: 1rem;
+    .card-reveal{
+      z-index: 1000;
+    }
     .card-image {
         z-index: 3;
         overflow: hidden;

@@ -13,10 +13,9 @@ var authenticate = function(req, res, next) {
     next();
   }
 };
-
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-   var user = currentUser;
+   user = currentUser;
    //console.log(user);
    console.log(user._id);
    //console.log(user.id);
@@ -30,11 +29,10 @@ router.get('/:id/edit', function(req, res) {
   console.log(req.params.id);
   User.findById(req.params.id)
     .then(function(user) {
-    //var user = currentUser.local;
+    //user = currentUser.local;
       console.log(user);
       res.render('users/edit', {
       user: user
-
       });
     });
 });
@@ -46,9 +44,10 @@ router.put('/:id', function(req, res) {
     .then(function(user) {
       user.name = req.body.name;
       user.local.email = req.body.email;
-      user.local.password = req.body.password;
-      user.image = req.body.image;
-      user.twitter = req.body.twitter;
+
+      // user.local.password = req.body.password;
+      user.local.image = req.body.image;
+      user.local.twitter = req.body.twitter;
       return user.save();
     })
     .then(function(saved) {
@@ -69,7 +68,7 @@ module.exports = router;
 
 //WHO KNOWS?!
   //isnt finding user now?!
-  // var user = User.findById(currentUser._id).populate("bands")
+  // user = User.findById(currentUser._id).populate("bands")
   // console.log(user.id)
    //WONT FOLLOW PROMISE ANYMORE. .THEN NEVER HAPPENS
     // .then(function(user) {
@@ -78,7 +77,7 @@ module.exports = router;
     // });
 
 //THIS DOES WORK? MAYBE?
-    // var user = User.findById(currentUser._id).populate("bands")
+    // user = User.findById(currentUser._id).populate("bands")
     // .then(function(user) {
     //   console.log('currentUser has bands:', user.bands);
     //   res.render('index', { title: 'BandBoard', nav: true });
