@@ -4,13 +4,21 @@ var Band = require('./band');
 
 var User = new mongoose.Schema({
   local : {
-    name: String,
     email: String,
     password : String,
-    image: String,
-    twitter: String
-
+    },
+  twitter: {
+    id: String,
+    token: String,
+    username: String,
+    displayname: String
   },
+
+    name: String,
+    image: String,
+    twitter: String,
+
+
   bands : [{ type: mongoose.Schema.ObjectId, ref: 'Band' }],
   events: [{ type: mongoose.Schema.ObjectId, ref: 'Event' }]
 });

@@ -44,11 +44,11 @@ router.put('/:id', function(req, res) {
   console.log("update user");
   User.findById(req.params.id)
     .then(function(user) {
-      user.local.name = req.body.name;
+      user.name = req.body.name;
       user.local.email = req.body.email;
       user.local.password = req.body.password;
-      user.local.image = req.body.image;
-      user.local.twitter = req.body.twitter;
+      user.image = req.body.image;
+      user.twitter = req.body.twitter;
       return user.save();
     })
     .then(function(saved) {
