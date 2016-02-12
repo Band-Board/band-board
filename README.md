@@ -2,6 +2,9 @@
 -----------------
 WDI ATL Project 3
 -----------------
+
+ERD: https://www.draw.io/#G0B1L2qPBxL7GqaFJ0R2Zxa3BJY2s
+
 Heroku: https://band-board.herokuapp.com/
 
 Github: https://github.com/Band-Board/band-board
