@@ -1,5 +1,32 @@
+function openModal(event) {
+    console.log(event.title);
+    $('.showTitle').text(event.title);
+    $('.datetime').text(event.formatted_datetime);
+    $('.venue').text(event.venue.name +", " + event.formatted_location);
+    $('.rsvp').attr('href', event.facebook_rsvp);
+    if (event.ticket_status === 'available'){
+        $('.availability').text('Tickets Available!');
+    } else {
+        $('.availability').text('Sold Out!');
+    }
+    if (event.artists.length > 0){
+        var i = 0;
+        $('.bandsPlaying').text('');
+        event.artists.forEach(function(x){
+            if (i < 3){
+            $('.bandsPlaying').append('<li class="inline"><a href=' + x.website+ '><img src=' + x.thumb_url + ' width="100px" height="100px"><p>' + x.name + '</a></li>');
+            i++;
+        }
+        });
+    }
+    $('.ticketLink').attr('href', event.ticket_url);
+    $('#modal1').openModal();
+}
+
+
 function searchEventsInTown() {
     // event.preventDefault();
+    modalArray = [];
     console.log('hello from events in town');
     if ($('#bandName').text() !== "") {
         $artist = $('#bandName').text();
@@ -27,13 +54,26 @@ function searchEventsInTown() {
                     JSON.push({
                         "title": x.title,
                         "start": x.datetime,
-                        "allDay": true
+                        "allDay": true,
+                        "artists": x.artists,
+                        "datetime": x.datetime,
+                        "description": x.description,
+                        "facebook_rsvp": x.facebook_rsvp_url,
+                        "formatted_datetime": x.formatted_datetime,
+                        "formatted_location": x.formatted_location,
+                        "on_sale": x.on_sale_datetime,
+                        "ticket_status": x.ticket_status,
+                        "ticket_type": x.ticket_type,
+                        "ticket_url": x.ticket_url,
+                        "venue": x.venue,
                     });
+
                 });
                 $('#calendar').fullCalendar({
                     events: JSON,
                     eventClick: function(calEvent, jsEvent, view) {
-                        alert('Event: ' + calEvent.title);
+                        console.log(calEvent);
+                        openModal(calEvent);
                     }
                 });
             } else {
@@ -93,7 +133,7 @@ $(document).ready(function() {
         $('#calendar').fullCalendar({
             //- events: JSON,
             eventClick: function(calEvent, jsEvent, view) {
-                alert('Event: ' + calEvent.title);
+                openModal(userEvents);
             }
         });
 
