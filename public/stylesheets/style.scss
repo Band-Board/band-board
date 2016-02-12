@@ -8,21 +8,21 @@ h1 {
     margin: 0
 }
 
-.invisiDot{
+.invisiDot {
     opacity: 0;
     height: 1px;
     width: 20px;
 }
 
-.bandsPlaying{
+.bandsPlaying {
     display: flex;
     justify-content: flex-start;
-    li{
+    li {
         margin: 0 10px;
     }
 }
 
-.largeCopy{
+.largeCopy {
     padding-top: 15vh;
 }
 
@@ -52,18 +52,18 @@ h1 {
     color: $dividersDark;
 }
 
-.manuallyAdd{
-  width: 100vw;
-  height: 50px;
-  margin: 10px;
+.manuallyAdd {
+    width: 100vw;
+    height: 50px;
+    margin: 10px;
 }
 
 .card {
     height: 400px;
     padding: 5px;
     font-size: 1rem;
-    .card-reveal{
-      z-index: 1000;
+    .card-reveal {
+        z-index: 1000;
     }
     .card-image {
         z-index: 3;
@@ -71,8 +71,8 @@ h1 {
         height: 300px;
         overflow: hidden;
         img {
-          height: 300px;
-          overflow: hidden;
+            height: 300px;
+            overflow: hidden;
             // max-height: 250px;
         }
         .card-content {
@@ -96,7 +96,7 @@ h1 {
         .largeCopy,
         .smallerCopy {}
         .largeCopy {
-            font-size: 80px;
+            font-size: 5rem;
             font-weight: bold;
             line-height: 20%;
         }
@@ -132,3 +132,45 @@ h1 {
 @import 'loginstyles.scss';
 @import 'userstyles.scss';
 @import 'bandstyles.scss';
+$small-and-down: "only screen and (max-width : 600px)" !default;
+@media #{$small-and-down} {
+    .jumbotron {
+        background: url('../images/band_back.png') no-repeat right fixed;
+        background-size: cover;
+    }
+    #username{
+        font-size: 15px;
+    }
+    #bandName{
+        font-size: 18px;
+    }
+    .largeCopy p {
+        font-size: 3rem
+    }
+    .smallerCopy p {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+    .vert {
+        border-bottom: 3px solid $dividersDark;
+        border-right: 0px;
+    }
+}
+
+@media only screen and (max-device-width: 736px) and (orientation: landscape) {
+    .jumbotron {
+        height: 100%;
+    }
+    .loginRemote {
+        height: 100%;
+    }
+    .loginBack {
+        display: fixed;
+        top: 0;
+        z-index: -1;
+        background: url('../images/loginback.jpg') no-repeat center center fixed;
+        background-size: cover;
+        height: 150vh;
+        width: 125vw
+    }
+}

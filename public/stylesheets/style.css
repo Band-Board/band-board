@@ -72,7 +72,7 @@ h1 {
     text-align: center;
     margin-top: 10px; }
     .jumbotron .callToAction .largeCopy {
-      font-size: 80px;
+      font-size: 5rem;
       font-weight: bold;
       line-height: 20%; }
     .jumbotron .callToAction .smallerCopy {
@@ -135,6 +135,9 @@ h1 {
   width: 350px;
   margin: 5px auto; }
 
+.localLogin a {
+  margin-top: 5px; }
+
 .userProfile {
   height: 100vh;
   width: 100vw; }
@@ -188,3 +191,34 @@ h1 {
   width: 50%;
   float: left;
   padding-left: 25px; }
+
+@media only screen and (max-width: 600px) {
+  .jumbotron {
+    background: url("../images/band_back.png") no-repeat right fixed;
+    background-size: cover; }
+  #username {
+    font-size: 15px; }
+  #bandName {
+    font-size: 18px; }
+  .largeCopy p {
+    font-size: 3rem; }
+  .smallerCopy p {
+    font-size: 1.2rem;
+    text-align: left; }
+  .vert {
+    border-bottom: 3px solid #3c3c3c;
+    border-right: 0px; } }
+
+@media only screen and (max-device-width: 736px) and (orientation: landscape) {
+  .jumbotron {
+    height: 100%; }
+  .loginRemote {
+    height: 100%; }
+  .loginBack {
+    display: fixed;
+    top: 0;
+    z-index: -1;
+    background: url("../images/loginback.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 150vh;
+    width: 125vw; } }

@@ -6,19 +6,26 @@ block content
     .center-align
       img(class='largeLogo' src='./images/largelogo.png')
     .row
-      .col.s5.vert.offset-s1
+      .col.m6.vert.s12
         .row
           .localLogin.col.s12
             h4 Log-In
             form.col.s12(name="signUp", method="post", action='/login')
               include ./_loginform.jade
-      .loginRemote.col.s5
+              br
+              a.btn.waves-effect.waves-light(href='./signup') Sign-Up
+      .loginRemote.col.m5.s12
         h4 Via Social Media
         ul
           li.center-align
-            a.socialLogin.waves-effect.waves-light.btn-large(href='#') Log-In Via Facebook
+            a.socialLogin.waves-effect.waves-light.hide-on-med-and-down.btn-large(href='#') Log-In Via Facebook
+            a.socialLogin.waves-effect.waves-light.hide-on-large-only.show-on-small.btn(href='#') Log-In Via Facebook
           li.center-align
-            a.socialLogin.waves-effect.waves-light.btn-large(href='/auth/twitter') Log-In Via Twitter
+
+            a.socialLogin.waves-effect.waves-light.hide-on-med-and-down.btn-large(href='#') Log-In Via Twitter
+            a.socialLogin.waves-effect.waves-light.hide-on-large-only.show-on-small.btn(href='/auth/twitter') Log-In Via Twitter
+
           li.center-align
-            a.socialLogin.waves-effect.waves-light.btn-large(href='#') Log-In Via Spotify
+            a.socialLogin.waves-effect.waves-light.hide-on-med-and-down.btn-large(href='#') Log-In Via Spotify
+            a.socialLogin.waves-effect.waves-light.hide-on-large-only.show-on-small.btn(href='#') Log-In Via Spotify
   .loginBack
