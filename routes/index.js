@@ -26,12 +26,14 @@ router.get('/search', function(req, res, next) {
       console.log(band);
       if (band.length > 0) {
         band.forEach(function(x){
+          console.log(x);
            x.image_url= x.img,
            x.upcoming_event_count = x.dates.length;
         });
         console.log('rendering from local');
         res.render('search.jade', {
-          band: band
+          band: band,
+          inDb: true
         });
       } else {
         console.log(Ajax.working);

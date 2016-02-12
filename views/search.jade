@@ -21,8 +21,11 @@ block content
                 if x.upcoming_event_count > 0
                   p On Tour Now!
                   a.seeTourDates(href='#') See Tour Dates
-                  br
+                if inDb
+                  a(href='/bands/'+x._id) See Bands Page
+                else
                   a.seeBandPage(href='#') See Bands Page
+                  br
                   ul.showDates
     .row.hide
       form.col.s12(name="bandForm", method="post", action='/bands')
