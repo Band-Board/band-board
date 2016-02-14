@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
+var morgan       = require('morgan');
 
 var passport = require('passport');
 var session = require('express-session');
@@ -16,6 +17,10 @@ var flash = require('connect-flash');
 var fs = require ('fs');
 var http = require('http');
 var path = require('path');
+
+//logs
+var accessLogStream = fs.createWriteStream(__dirname + '/logs/morgan.log', {flags: 'a'})
+
 
 //Routers
 var indexRouter = require('./routes/index');
@@ -42,6 +47,9 @@ app.use(session({ secret: 'WDI Rocks!' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+
+// setup the logger
+app.use(morgan('combined', {stream: accessLogStream}));
 
 require('./config/passport/passport')(passport);
 

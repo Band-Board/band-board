@@ -12,11 +12,12 @@ var configAuth = require('../auth');
         callbackURL     : configAuth.twitterAuth.callbackURL
 
     },
+
     function(token, tokenSecret, profile, done) {
 
         // make the code asynchronous
     // User.findOne won't fire until we have all our data back from Twitter
-        process.nextTick(function() {
+        /*process.nextTick */(function() {
 
             User.findOne({ 'twitter.id' : profile.id }, function(err, user) {
 

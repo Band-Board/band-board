@@ -21,4 +21,6 @@ var passportConfig = function(passport) {
   });
 };
 
+
+
 module.exports = passportConfig;

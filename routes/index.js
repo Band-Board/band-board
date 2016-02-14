@@ -77,14 +77,16 @@ router.post('/login', function(req, res, next) {
   return loginProperty(req, res, next);
 });
 
+//Twitter Authentication
+
 router.get('/auth/twitter', passport.authenticate('twitter'));
 
-    // handle the callback after twitter has authenticated the user
+// handle the callback after twitter has authenticated the user
 router.get('/auth/twitter/callback',
-        passport.authenticate('twitter', {
-            successRedirect : '/profile',
-            failureRedirect : '/'
-        }));
+    passport.authenticate('twitter', { failureRedirect: '/login' }),
+     function(req, res) {
+    res.redirect('/');
+  });
 
 // GET /logout
 router.get('/logout', function(req, res, next) {
