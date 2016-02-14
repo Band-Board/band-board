@@ -7,17 +7,16 @@ var User = new mongoose.Schema({
     email: String,
     password : String,
     },
-  twitter: {
-    id: String,
-    token: String,
-    username: String,
-    displayname: String
+  twitter: String,
+  google: String,
+  github: String,
+    profile: {
+    name: { type: String, default: '' },
+    gender: { type: String, default: '' },
+    location: { type: String, default: '' },
+    website: { type: String, default: '' },
+    picture: { type: String, default: '' }
   },
-
-    name: String,
-    image: String,
-    twitter: String,
-
 
   bands : [{ type: mongoose.Schema.ObjectId, ref: 'Band' }],
   events: [{ type: mongoose.Schema.ObjectId, ref: 'Event' }]
