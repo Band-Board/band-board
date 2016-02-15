@@ -8,14 +8,15 @@ var User = new mongoose.Schema({
     password : String,
     },
   twitter: String,
-  google: String,
-  github: String,
+  facebook: String,
+  spotify: String,
     profile: {
     name: { type: String, default: '' },
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
     website: { type: String, default: '' },
-    picture: { type: String, default: '' }
+    picture: { type: String, default: '' },
+    twitter: { type: String, default: '' }
   },
 
   bands : [{ type: mongoose.Schema.ObjectId, ref: 'Band' }],
@@ -32,8 +33,4 @@ User.methods.isValidPassword = function(password) {
 };
 
 module.exports = mongoose.model('User', User);
-//Shows
-//Image
-//location
-//twitter
-//name
+

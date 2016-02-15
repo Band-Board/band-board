@@ -6,16 +6,16 @@ block content
   form(name="profileForm", method="post", action='/user/#{user.id}?_method=PUT')
     .input-field.col.s12
       label(for='name') Name
-      input(id='name', type="text", name="name", value="#{ user.local.name ? user.local.name : ''}")
+      input(id='name', type="text", name="name", value="#{ user.profile.name ? user.profile.name : ''}")
     .input-field.col.s12
       label(for='email') Email
       input(id='email', type="text", name="email", value="#{ user.local.email ? user.local.email : ''}")
     .input-field.col.s12
       label(for='image') Image URL
-      input(id="image" type="text", name="image", value="#{ user.local.image ? user.local.image : ''}")
+      input(id="image" type="text", name="image", value="#{ user.profile.picture ? user.profile.picture : ''}")
     .input-field.col.s12
       label(for='twitter') Twitter URL
-      input(id="twitter" type="text", name="twitter", value="#{ user.local.twitter ? user.local.twitter : ''}")
+      input(id="twitter" type="text", name="twitter", value="#{ user.profile.twitter ? user.twitter : ''}")
     button.btn.waves-effect.waves-light(type="submit" name='action') Submit
       i.material-icons.right send
 

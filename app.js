@@ -14,6 +14,7 @@ var flash = require('connect-flash');
 
 //images
 //var cloudinary = require('cloudinary');
+var formidable = require('formidable');
 var fs = require ('fs');
 var http = require('http');
 var path = require('path');
