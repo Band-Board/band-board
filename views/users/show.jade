@@ -3,6 +3,7 @@ include ../layout.jade
 .userProfile.row
   .aside.col.s3.z-depth-2
     .profileImg
+
       if !user.profile.image
         img(src='./images/user_placeholder.png')
       else
@@ -21,7 +22,18 @@ include ../layout.jade
         a(href='/user/'+ user._id + '/edit') Add Info
   .calendar.col.s9
     #calendar
+  #modal1.modal
+    .modal-content
+      h4.showTitle Modal Header
+      p.datetime
+      p.venue A bunch of text
+      p.availability
+      a.rsvp(href="#!") RSVP on Facebook
+      ul.bandsPlaying
+    .modal-footer
+      a(href="#!" class="ticketLink modal-action modal-close waves-effect waves-green btn-flat") Buy A Ticket!
 
+<<<<<<< HEAD
 
 
 h1 Profile
@@ -54,3 +66,6 @@ h1 Profile
       a(href="#!" class="ticketLink modal-action modal-close waves-effect waves-green btn-flat") Buy A Ticket!
 
 
+=======
+
+>>>>>>> 428ca39b95969ec79f611cd36df2297159c038d3

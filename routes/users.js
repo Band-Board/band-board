@@ -50,7 +50,6 @@ router.put('/:id', function(req, res) {
       if (req.body.name){
       user.local.name = req.body.name;
       user.local.email = req.body.email;
-
       // user.local.password = req.body.password;
       user.local.image = req.body.image;
       user.local.twitter = req.body.twitter;
