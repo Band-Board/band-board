@@ -4,13 +4,21 @@ var Band = require('./band');
 
 var User = new mongoose.Schema({
   local : {
-    name: String,
     email: String,
     password : String,
-    image: String,
-    twitter: String
-
+    },
+  twitter: String,
+  facebook: String,
+  spotify: String,
+    profile: {
+    name: { type: String, default: '' },
+    gender: { type: String, default: '' },
+    location: { type: String, default: '' },
+    website: { type: String, default: '' },
+    picture: { type: String, default: '' },
+    twitter: { type: String, default: '' }
   },
+
   bands : [{ type: mongoose.Schema.ObjectId, ref: 'Band' }],
   //events: [{ type: mongoose.Schema.ObjectId, ref: 'Event' }]
   events: []
@@ -25,8 +33,4 @@ User.methods.isValidPassword = function(password) {
 };
 
 module.exports = mongoose.model('User', User);
-//Shows
-//Image
-//location
-//twitter
-//name
+

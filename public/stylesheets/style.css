@@ -193,6 +193,7 @@ h1 {
   padding-left: 25px; }
 
 @media only screen and (max-width: 600px) {
+
   .jumbotron {
     background: url("../images/band_back.png") no-repeat right fixed;
     background-size: cover; }

@@ -1,12 +1,13 @@
 var localSignupStrategy = require('./local-signup-strategy');
 var localLoginStrategy  = require('./local-login-strategy');
+var twitterStrategy  = require('./twitter-strategy');
 var User = require('../../models/user');
-
 var passportConfig = function(passport) {
 
   // Strategies
   passport.use('local-signup', localSignupStrategy);
   passport.use('local-login' , localLoginStrategy);
+  passport.use('twitter' , twitterStrategy);
 
   // Session Support
   passport.serializeUser(function(user, callback) {
@@ -19,5 +20,7 @@ var passportConfig = function(passport) {
     });
   });
 };
+
+
 
 module.exports = passportConfig;

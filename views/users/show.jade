@@ -3,17 +3,18 @@ include ../layout.jade
 .userProfile.row
   .aside.col.s3.z-depth-2
     .profileImg
-      if !user.local.image
+
+      if !user.profile.image
         img(src='./images/user_placeholder.png')
       else
-        img(src="#{user.local.image}")
-      if !user.local.name
+        img(src="#{user.profile.image}")
+      if !user.profile.name
         h3
           a(href='/user/'+ user._id + '/edit') Add Your Info
       else
-        h4#username= user.local.name
+        h4#username= user.profile.name
         h5
-          a(href=user.local.twitter, target="_blank") twitter
+          a(href=user.profile.twitter, target="_blank") twitter
         br
         a(href='/user/bands') My Bands
         br
@@ -32,4 +33,39 @@ include ../layout.jade
     .modal-footer
       a(href="#!" class="ticketLink modal-action modal-close waves-effect waves-green btn-flat") Buy A Ticket!
 
+<<<<<<< HEAD
 
+
+h1 Profile
+  a(href="/user/#{user._id}/edit") Edit
+  br
+
+
+  script.
+        $(document).ready(function() {
+            var JSON = [{
+              "title" : "Demo event",
+              "start" : "2016-2-15 22:20:00",
+              "allDay" : true
+                    }
+            ];
+            $('#calendar').fullCalendar({
+              events: JSON
+            })
+        });
+
+  #modal1.modal
+    .modal-content
+      h4.showTitle Modal Header
+      p.datetime
+      p.venue A bunch of text
+      p.availability
+      a.rsvp(href="#!") RSVP on Facebook
+      ul.bandsPlaying
+    .modal-footer
+      a(href="#!" class="ticketLink modal-action modal-close waves-effect waves-green btn-flat") Buy A Ticket!
+
+
+=======
+
+>>>>>>> 428ca39b95969ec79f611cd36df2297159c038d3
